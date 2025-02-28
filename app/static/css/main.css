@@ -1,0 +1,41 @@
+/* Main stylesheet for Apartment Finder */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #4c6ef5;
+    border-color: #4c6ef5;
+}
+
+.btn-primary:hover {
+    background-color: #3b5bdb;
+    border-color: #3b5bdb;
+}
+
+footer {
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
+}
+
+.text-truncate {
+    max-width: 250px;
+    display: inline-block;
+    vertical-align: middle;
+}

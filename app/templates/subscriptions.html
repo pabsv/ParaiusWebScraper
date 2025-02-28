@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}My Subscriptions{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">My Subscriptions</h2>
+            </div>
+            <div class="card-body">
+                {% if not email %}
+                    <div class="alert alert-info">
+                        Please enter your email to view your subscriptions.
+                    </div>
+                    <form action="{{ url_for('main.subscriptions') }}" method="GET">
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
+                {% elif not subscriptions %}
+                    <div class="alert alert-info">
+                        No subscriptions found for {{ email }}
+                    </div>
+                    <p>
+                        <a href="{{ url_for('main.index') }}" class="btn btn-primary">Create a subscription</a>
+                    </p>
+                {% else %}
+                    <p>Showing subscriptions for: <strong>{{ email }}</strong></p>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Search URL</th>
+                                    <th>Created</th>
+                                    <th>Last Checked</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sub in subscriptions %}
+                                <tr>
+                                    <td>
+                                        <a href="{{ sub.url }}" target="_blank" class="text-truncate d-inline-block" style="max-width: 300px;">
+                                            {{ sub.url }}
+                                        </a>
+                                    </td>
+                                    <td>{{ sub.created_at.strftime('%Y-%m-%d') }}</td>
+                                    <td>
+                                        {% if sub.last_checked %}
+                                            {{ sub.last_checked.strftime('%Y-%m-%d %H:%M') }}
+                                        {% else %}
+                                            Not checked yet
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if sub.active %}
+                                            <span class="badge bg-success">Active</span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">Inactive</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if sub.active %}
+                                            <a href="{{ url_for('main.unsubscribe', sub_id=sub.id) }}" class="btn btn-sm btn-outline-danger">Unsubscribe</a>
+                                            <a href="{{ url_for('main.test_scraper', sub_id=sub.id) }}" class="btn btn-sm btn-outline-primary ms-1">Test Now</a>
+                                        {% else %}
+                                            <a href="{{ url_for('main.reactivate', sub_id=sub.id) }}" class="btn btn-sm btn-outline-success">Reactivate</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
