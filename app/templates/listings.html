@@ -1,3 +1,4 @@
+<!-- app/templates/listings.html -->
 {% extends "base.html" %}
 
 {% block title %}Browse Listings{% endblock %}
@@ -5,124 +6,153 @@
 {% block content %}
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h2 class="mb-0">Current Eindhoven Listings</h2>
-            </div>
+        <h1 class="mb-4">Apartment Listings</h1>
+        
+        <div class="card mb-4">
             <div class="card-body">
-                <form action="{{ url_for('main.browse_listings') }}" method="GET" class="mb-4">
+                <form action="{{ url_for('main.browse_listings') }}" method="GET">
                     <div class="row g-3">
-                        <div class="col-md-2">
-                            <label class="form-label">Min Price</label>
-                            <input type="number" name="min_price" class="form-control" value="{{ min_price }}">
+                        <div class="col-md-3">
+                            <label class="form-label">Price Range</label>
+                            <div class="d-flex align-items-center">
+                                <div class="input-group">
+                                    <span class="input-group-text">€</span>
+                                    <input type="number" name="min_price" class="form-control" value="{{ min_price }}" placeholder="Min">
+                                </div>
+                                <span class="mx-2">-</span>
+                                <div class="input-group">
+                                    <span class="input-group-text">€</span>
+                                    <input type="number" name="max_price" class="form-control" value="{{ max_price }}" placeholder="Max">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <label class="form-label">Max Price</label>
-                            <input type="number" name="max_price" class="form-control" value="{{ max_price }}">
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label">Min Bedrooms</label>
-                            <input type="number" name="min_bedrooms" class="form-control" value="{{ min_bedrooms }}">
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label">Max Bedrooms</label>
-                            <input type="number" name="max_bedrooms" class="form-control" value="{{ max_bedrooms }}">
+                        <div class="col-md-3">
+                            <label class="form-label">Bedrooms</label>
+                            <div class="d-flex align-items-center">
+                                <input type="number" name="min_bedrooms" class="form-control" value="{{ min_bedrooms }}" placeholder="Min">
+                                <span class="mx-2">-</span>
+                                <input type="number" name="max_bedrooms" class="form-control" value="{{ max_bedrooms }}" placeholder="Max">
+                            </div>
                         </div>
                         <div class="col-md-2 d-flex align-items-end">
-                            <button type="submit" class="btn btn-primary w-100">Filter</button>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="bi bi-filter me-1"></i> Apply Filters
+                            </button>
                         </div>
                         <div class="col-md-2 d-flex align-items-end">
-                            <a href="{{ url_for('main.browse_listings') }}" class="btn btn-secondary w-100">Reset</a>
+                            <a href="{{ url_for('main.browse_listings') }}" class="btn btn-outline-secondary w-100">
+                                <i class="bi bi-x-circle me-1"></i> Reset
+                            </a>
                         </div>
                     </div>
                 </form>
-                
-                {% if listings.items %}
-                    <div class="row">
-                        {% for listing in listings.items %}
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-header">
-                                        <h5 class="card-title mb-0 text-truncate">{{ listing.title }}</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <strong class="text-success">{{ listing.price_text }}</strong>
-                                        </div>
-                                        {% if listing.address %}
-                                            <div class="mb-2 text-muted">
-                                                <i class="bi bi-geo-alt"></i> {{ listing.address }}
-                                            </div>
-                                        {% endif %}
-                                        <div class="mb-2">
-                                            {% if listing.bedrooms %}
-                                                <span class="badge bg-info me-2">{{ listing.bedrooms }} bedrooms</span>
-                                            {% endif %}
-                                            {% if listing.area %}
-                                                <span class="badge bg-secondary me-2">{{ listing.area }} m²</span>
-                                            {% endif %}
-                                        </div>
-                                        {% if listing.specs %}
-                                            <div class="mb-3 small">
-                                                {{ listing.specs }}
-                                            </div>
-                                        {% endif %}
-                                        <div class="text-muted small mb-2">
-                                            Added: {{ listing.date_found.strftime('%Y-%m-%d %H:%M') }}
-                                        </div>
-                                        <a href="{{ listing.url }}" target="_blank" class="btn btn-sm btn-outline-primary">View on Pararius</a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    
-                    <nav aria-label="Listings pagination">
-                        <ul class="pagination justify-content-center">
-                            {% if listings.has_prev %}
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.prev_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">Previous</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled">
-                                    <span class="page-link">Previous</span>
-                                </li>
-                            {% endif %}
-                            
-                            {% for page_num in listings.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-                                {% if page_num %}
-                                    {% if page_num == listings.page %}
-                                        <li class="page-item active">
-                                            <span class="page-link">{{ page_num }}</span>
-                                        </li>
-                                    {% else %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="{{ url_for('main.browse_listings', page=page_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">{{ page_num }}</a>
-                                        </li>
-                                    {% endif %}
-                                {% else %}
-                                    <li class="page-item disabled">
-                                        <span class="page-link">...</span>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                            
-                            {% if listings.has_next %}
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.next_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">Next</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled">
-                                    <span class="page-link">Next</span>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                {% else %}
-                    <div class="alert alert-info">No listings found matching your criteria.</div>
-                {% endif %}
             </div>
         </div>
+        
+        {% if listings.items %}
+            <div class="row">
+                {% for listing in listings.items %}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card listing-card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0 text-truncate">{{ listing.title }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="listing-price">{{ listing.price_text }}</div>
+                                
+                                {% if listing.address %}
+                                    <div class="listing-address">
+                                        <i class="bi bi-geo-alt"></i> {{ listing.address }}
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="listing-features">
+                                    {% if listing.bedrooms %}
+                                        <span class="listing-feature">
+                                            <i class="bi bi-house-door"></i> {{ listing.bedrooms }} bedroom{% if listing.bedrooms != 1 %}s{% endif %}
+                                        </span>
+                                    {% endif %}
+                                    
+                                    {% if listing.area %}
+                                        <span class="listing-feature">
+                                            <i class="bi bi-arrows-fullscreen"></i> {{ listing.area }} m²
+                                        </span>
+                                    {% endif %}
+                                </div>
+                                
+                                {% if listing.specs %}
+                                    <div class="small text-muted mb-3">
+                                        {{ listing.specs }}
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="listing-date">
+                                    <i class="bi bi-calendar3"></i> Added {{ listing.date_found.strftime('%d %b %Y') }}
+                                </div>
+                                
+                                <a href="{{ listing.url }}" target="_blank" class="btn btn-primary mt-3">
+                                    <i class="bi bi-link-45deg"></i> View Property
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <nav aria-label="Listings pagination">
+                <ul class="pagination justify-content-center">
+                    {% if listings.has_prev %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.prev_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">
+                                <i class="bi bi-chevron-left"></i> Previous
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link">
+                                <i class="bi bi-chevron-left"></i> Previous
+                            </span>
+                        </li>
+                    {% endif %}
+                    
+                    {% for page_num in listings.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                        {% if page_num %}
+                            {% if page_num == listings.page %}
+                                <li class="page-item active">
+                                    <span class="page-link">{{ page_num }}</span>
+                                </li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=page_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">{{ page_num }}</a>
+                                </li>
+                            {% endif %}
+                        {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link">...</span>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if listings.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.next_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">
+                                Next <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link">
+                                Next <i class="bi bi-chevron-right"></i>
+                            </span>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% else %}
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i> No listings found matching your criteria.
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

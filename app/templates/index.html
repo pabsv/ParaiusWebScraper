@@ -4,110 +4,84 @@
 
 {% block styles %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.css">
-<style>
-    .price-slider { 
-        margin: 30px 0 50px 0; 
-    }
-    .noUi-connect {
-        background: #4c6ef5;
-    }
-    .price-labels {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-    }
-    .bedroom-btn {
-        width: 60px;
-    }
-    .bedroom-btn.active {
-        background-color: #4c6ef5;
-        border-color: #4c6ef5;
-    }
-</style>
 {% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h2 class="mb-0">Find Your Next Apartment in Eindhoven</h2>
-            </div>
-            <div class="card-body">
-                <p class="lead">
-                    Subscribe to receive email notifications for new apartment listings in Eindhoven that match your criteria.
-                </p>
+<div class="subscription-form-container">
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h2 class="mb-0">Find Your Next Apartment in Eindhoven</h2>
+        </div>
+        <div class="card-body">
+            <p class="lead">
+                Subscribe to receive email notifications for new apartment listings in Eindhoven that match your criteria.
+            </p>
+            
+            <form method="POST" action="{{ url_for('main.index') }}" id="subscriptionForm">
+                {{ form.hidden_tag() }}
+                {{ form.min_price() }}
+                {{ form.max_price() }}
+                {{ form.min_bedrooms() }}
+                {{ form.max_bedrooms() }}
                 
-                <form method="POST" action="{{ url_for('main.index') }}" id="subscriptionForm">
-                    {{ form.hidden_tag() }}
-                    {{ form.min_price() }}
-                    {{ form.max_price() }}
-                    {{ form.min_bedrooms() }}
-                    {{ form.max_bedrooms() }}
-                    
-                    <div class="mb-3">
-                        {{ form.email.label(class="form-label") }}
-                        {{ form.email(class="form-control", placeholder="your@email.com") }}
-                        {% if form.email.errors %}
-                            <div class="text-danger">
-                                {% for error in form.email.errors %}
-                                    <small>{{ error }}</small>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label class="form-label">Price Range (€)</label>
-                        <div id="price-slider" class="price-slider"></div>
-                        <div class="price-labels">
-                            <span id="price-min">€0</span>
-                            <span id="price-max">€3000</span>
+                <div class="mb-4">
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-control", placeholder="your@email.com") }}
+                    {% if form.email.errors %}
+                        <div class="text-danger mt-2">
+                            {% for error in form.email.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
                         </div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Price Range (€)</label>
+                    <div id="price-slider" class="price-slider"></div>
+                    <div class="price-labels">
+                        <span id="price-min">€0</span>
+                        <span id="price-max">€3000</span>
                     </div>
-                    
-                    <div class="mb-4">
-                        <label class="form-label">Minimum Bedrooms</label>
-                        <div class="btn-group d-flex flex-wrap" role="group" aria-label="Bedroom selection">
-                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="0">0+</button>
-                            <button type="button" class="btn btn-outline-primary bedroom-btn active" data-value="1">1+</button>
-                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="2">2+</button>
-                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="3">3+</button>
-                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="4">4+</button>
-                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="5">5+</button>
-                        </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Minimum Bedrooms</label>
+                    <div class="bedroom-selector">
+                        <button type="button" class="bedroom-btn" data-value="0">0+</button>
+                        <button type="button" class="bedroom-btn active" data-value="1">1+</button>
+                        <button type="button" class="bedroom-btn" data-value="2">2+</button>
+                        <button type="button" class="bedroom-btn" data-value="3">3+</button>
+                        <button type="button" class="bedroom-btn" data-value="4">4+</button>
+                        <button type="button" class="bedroom-btn" data-value="5">5+</button>
                     </div>
-                    
-                    <div class="d-grid">
-                        {{ form.submit(class="btn btn-primary btn-lg") }}
-                    </div>
-                </form>
-            </div>
+                </div>
+                
+                <div class="d-grid">
+                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                </div>
+            </form>
         </div>
-        
-        <div class="card mt-4">
-            <div class="card-header">
-                <h3 class="mb-0">Already subscribed?</h3>
-            </div>
-            <div class="card-body">
-                <p>Check your existing subscriptions:</p>
-                <form action="{{ url_for('main.subscriptions') }}" method="GET">
-                    <div class="input-group">
-                        <input type="email" name="email" class="form-control" placeholder="Enter your email">
-                        <button type="submit" class="btn btn-outline-primary">Check</button>
-                    </div>
-                </form>
-            </div>
+    </div>
+    
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3 class="mb-3">Already subscribed?</h3>
+            <p class="text-muted mb-3">Check your existing subscriptions:</p>
+            <form action="{{ url_for('main.subscriptions') }}" method="GET">
+                <div class="input-group">
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                    <button type="submit" class="btn btn-primary">Check</button>
+                </div>
+            </form>
         </div>
-        
-        <div class="card mt-4">
-            <div class="card-header">
-                <h3 class="mb-0">Browse Current Listings</h3>
-            </div>
-            <div class="card-body">
-                <p>View all currently available listings in Eindhoven:</p>
-                <a href="{{ url_for('main.browse_listings') }}" class="btn btn-success">Browse Listings</a>
-            </div>
+    </div>
+    
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3 class="mb-3">Browse Current Listings</h3>
+            <p class="text-muted mb-3">View all currently available listings in Eindhoven:</p>
+            <a href="{{ url_for('main.browse_listings') }}" class="btn btn-primary">Browse Listings</a>
         </div>
     </div>
 </div>

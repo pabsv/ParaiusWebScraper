@@ -721,3 +721,201 @@ urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(1
 2025-03-01 14:54:53,772 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:54:53] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
 2025-03-01 14:54:53,776 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:54:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-03-01 14:54:59,864 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 16:29:55,883 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 16:29:55,909 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 16:29:55,910 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 16:29:55,915 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 16:29:55,916 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 16:29:55,950 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 16:29:55,951 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 16:30:18,051 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:30:18] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 16:30:18,215 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:30:18] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 16:30:18,220 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:30:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 16:30:53,195 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:30:53] "GET / HTTP/1.1" 200 -
+2025-03-01 16:30:53,258 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:30:53] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 16:30:53,261 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:30:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 16:32:02,257 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:32:02] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 16:32:02,317 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:32:02] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 16:32:02,319 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:32:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 16:34:55,914 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:39:55 CET)" (scheduled at 2025-03-01 16:34:55.909514+01:00)
+2025-03-01 16:34:55,916 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 16:34:55,916 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 16:34:55,917 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:34:58,957 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 16:34:58,962 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 16:34:58,963 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:35:04,752 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 16:35:10,520 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 16:35:13,800 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 16:35:17,874 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 16:35:17,897 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 16:35:17,898 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:39:55 CET)" executed successfully
+2025-03-01 16:39:55,924 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:44:55 CET)" (scheduled at 2025-03-01 16:39:55.909514+01:00)
+2025-03-01 16:39:55,926 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 16:39:55,926 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 16:39:55,927 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:39:58,688 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 16:39:58,692 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 16:39:58,693 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:40:07,112 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 16:40:13,108 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 16:40:16,378 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 16:40:20,433 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 16:40:20,452 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 16:40:20,453 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:44:55 CET)" executed successfully
+2025-03-01 16:41:20,502 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:41:20] "GET / HTTP/1.1" 200 -
+2025-03-01 16:41:20,571 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:41:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 16:41:20,575 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 16:41:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 16:44:55,917 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:49:55 CET)" (scheduled at 2025-03-01 16:44:55.909514+01:00)
+2025-03-01 16:44:55,919 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 16:44:55,920 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 16:44:55,921 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:44:58,817 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 16:44:58,821 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 16:44:58,822 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:45:04,294 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 16:45:10,594 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 16:45:13,895 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 16:45:17,961 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 16:45:17,973 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 16:45:17,974 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:49:55 CET)" executed successfully
+2025-03-01 16:49:55,921 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:54:55 CET)" (scheduled at 2025-03-01 16:49:55.909514+01:00)
+2025-03-01 16:49:55,923 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 16:49:55,923 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 16:49:55,924 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:49:58,701 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 16:49:58,704 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 16:49:58,705 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:50:04,672 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 16:50:10,178 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 16:50:13,481 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 16:50:17,532 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 16:50:17,545 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 16:50:17,546 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:54:55 CET)" executed successfully
+2025-03-01 16:54:55,928 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:59:55 CET)" (scheduled at 2025-03-01 16:54:55.909514+01:00)
+2025-03-01 16:54:55,930 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 16:54:55,931 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 16:54:55,931 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:54:58,792 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 16:54:58,795 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 16:54:58,796 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:55:03,827 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 16:55:09,805 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 16:55:14,038 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 16:55:18,108 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 16:55:18,116 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 16:55:18,117 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 16:59:55 CET)" executed successfully
+2025-03-01 16:59:55,919 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:04:55 CET)" (scheduled at 2025-03-01 16:59:55.909514+01:00)
+2025-03-01 16:59:55,920 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 16:59:55,921 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 16:59:55,922 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 16:59:58,715 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 16:59:58,719 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 16:59:58,720 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:00:02,140 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 17:00:08,053 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 17:00:12,091 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 17:00:16,153 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 17:00:16,175 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 17:00:16,176 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:04:55 CET)" executed successfully
+2025-03-01 17:04:55,928 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:09:55 CET)" (scheduled at 2025-03-01 17:04:55.909514+01:00)
+2025-03-01 17:04:55,930 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 17:04:55,931 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 17:04:55,931 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:04:58,690 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 17:04:58,693 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 17:04:58,693 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:05:04,131 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 17:05:09,717 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 17:05:13,911 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 17:05:17,971 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 17:05:17,980 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 17:05:17,981 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:09:55 CET)" executed successfully
+2025-03-01 17:09:55,923 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:14:55 CET)" (scheduled at 2025-03-01 17:09:55.909514+01:00)
+2025-03-01 17:09:55,924 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 17:09:55,925 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 17:09:55,926 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:09:58,674 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 17:09:58,678 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 17:09:58,679 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:10:04,104 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 17:10:09,718 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 17:10:13,942 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 17:10:17,983 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 17:10:18,001 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 17:10:18,001 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:14:55 CET)" executed successfully
+2025-03-01 17:17:51,830 - apscheduler.executors.default - WARNING - Run time of job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:19:55 CET)" was missed by 0:02:55.921223
+2025-03-01 17:19:50,553 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 17:19:50] "GET / HTTP/1.1" 200 -
+2025-03-01 17:19:50,593 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 17:19:50] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 17:19:50,713 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 17:19:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 17:19:55,920 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:24:55 CET)" (scheduled at 2025-03-01 17:19:55.909514+01:00)
+2025-03-01 17:19:55,922 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 17:19:55,923 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 17:19:55,924 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:19:58,778 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 17:19:58,782 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 17:19:58,782 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:20:04,529 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 17:20:10,550 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 17:20:14,527 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 17:20:18,592 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 17:20:18,613 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 17:20:18,613 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:24:55 CET)" executed successfully
+2025-03-01 17:24:55,925 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:29:55 CET)" (scheduled at 2025-03-01 17:24:55.909514+01:00)
+2025-03-01 17:24:55,926 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 17:24:55,926 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 17:24:55,927 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:24:58,709 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 17:24:58,712 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 17:24:58,713 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 17:25:03,758 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 17:25:09,352 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 17:25:12,655 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 17:25:16,705 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 17:25:16,723 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 17:25:16,724 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 17:29:55 CET)" executed successfully
+2025-03-01 17:59:28,212 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 18:03:24,706 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 18:03:24,740 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 18:03:24,741 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 18:03:24,744 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 18:03:24,745 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 18:03:24,769 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 18:03:24,770 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 18:03:26,169 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:03:26] "GET / HTTP/1.1" 200 -
+2025-03-01 18:03:26,300 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:03:26] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-01 18:03:26,303 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:03:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:03:26,393 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:03:26] "[33mGET /static/img/favicon-32x32.png HTTP/1.1[0m" 404 -
+2025-03-01 18:03:26,401 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:03:26] "[33mGET /static/img/favicon-16x16.png HTTP/1.1[0m" 404 -
+2025-03-01 18:06:49,811 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:06:49] "GET / HTTP/1.1" 200 -
+2025-03-01 18:06:49,854 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:06:49] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-01 18:06:49,858 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:06:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:08:24,746 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 18:13:24 CET)" (scheduled at 2025-03-01 18:08:24.739936+01:00)
+2025-03-01 18:08:24,748 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 18:08:24,748 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 18:08:24,749 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 18:08:27,883 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 18:08:27,917 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 18:08:27,918 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 18:08:33,248 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 18:08:39,958 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 18:08:43,357 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 18:08:47,399 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 18:08:47,419 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 18:08:47,420 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 18:13:24 CET)" executed successfully
+2025-03-01 18:13:24,758 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 18:18:24 CET)" (scheduled at 2025-03-01 18:13:24.739936+01:00)
+2025-03-01 18:13:24,760 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 18:13:24,760 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 18:13:24,761 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 18:13:27,559 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 18:13:27,562 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 18:13:27,563 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 18:13:33,071 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 18:13:38,917 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 18:13:42,197 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 18:13:46,282 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 18:13:46,301 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 18:13:46,302 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 18:18:24 CET)" executed successfully
+2025-03-01 18:15:14,337 - apscheduler.scheduler - INFO - Scheduler has been shut down
