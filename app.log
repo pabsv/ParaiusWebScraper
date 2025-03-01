@@ -919,3 +919,18 @@ urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(1
 2025-03-01 18:13:46,301 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
 2025-03-01 18:13:46,302 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 18:18:24 CET)" executed successfully
 2025-03-01 18:15:14,337 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 18:23:46,658 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 18:23:46,682 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 18:23:46,683 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 18:23:46,686 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 18:23:46,686 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 18:23:46,703 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 18:23:46,704 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 18:23:49,918 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:23:49] "GET / HTTP/1.1" 200 -
+2025-03-01 18:23:50,030 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:23:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:23:50,032 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:23:50] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-01 18:26:49,433 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:26:49] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 18:26:49,485 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:26:49] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:26:49,488 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:26:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:27:15,365 - apscheduler.scheduler - INFO - Scheduler has been shut down
