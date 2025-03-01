@@ -2,6 +2,30 @@
 
 {% block title %}Apartment Finder - Home{% endblock %}
 
+{% block styles %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.css">
+<style>
+    .price-slider { 
+        margin: 30px 0 50px 0; 
+    }
+    .noUi-connect {
+        background: #4c6ef5;
+    }
+    .price-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .bedroom-btn {
+        width: 60px;
+    }
+    .bedroom-btn.active {
+        background-color: #4c6ef5;
+        border-color: #4c6ef5;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -14,8 +38,12 @@
                     Subscribe to receive email notifications for new apartment listings in Eindhoven that match your criteria.
                 </p>
                 
-                <form method="POST" action="{{ url_for('main.index') }}">
+                <form method="POST" action="{{ url_for('main.index') }}" id="subscriptionForm">
                     {{ form.hidden_tag() }}
+                    {{ form.min_price() }}
+                    {{ form.max_price() }}
+                    {{ form.min_bedrooms() }}
+                    {{ form.max_bedrooms() }}
                     
                     <div class="mb-3">
                         {{ form.email.label(class="form-label") }}
@@ -29,53 +57,24 @@
                         {% endif %}
                     </div>
                     
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            {{ form.min_price.label(class="form-label") }}
-                            {{ form.min_price(class="form-control", type="number") }}
-                            {% if form.min_price.errors %}
-                                <div class="text-danger">
-                                    {% for error in form.min_price.errors %}
-                                        <small>{{ error }}</small>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-6">
-                            {{ form.max_price.label(class="form-label") }}
-                            {{ form.max_price(class="form-control", type="number") }}
-                            {% if form.max_price.errors %}
-                                <div class="text-danger">
-                                    {% for error in form.max_price.errors %}
-                                        <small>{{ error }}</small>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
+                    <div class="mb-4">
+                        <label class="form-label">Price Range (€)</label>
+                        <div id="price-slider" class="price-slider"></div>
+                        <div class="price-labels">
+                            <span id="price-min">€0</span>
+                            <span id="price-max">€3000</span>
                         </div>
                     </div>
                     
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            {{ form.min_bedrooms.label(class="form-label") }}
-                            {{ form.min_bedrooms(class="form-control", type="number") }}
-                            {% if form.min_bedrooms.errors %}
-                                <div class="text-danger">
-                                    {% for error in form.min_bedrooms.errors %}
-                                        <small>{{ error }}</small>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-6">
-                            {{ form.max_bedrooms.label(class="form-label") }}
-                            {{ form.max_bedrooms(class="form-control", type="number") }}
-                            {% if form.max_bedrooms.errors %}
-                                <div class="text-danger">
-                                    {% for error in form.max_bedrooms.errors %}
-                                        <small>{{ error }}</small>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
+                    <div class="mb-4">
+                        <label class="form-label">Minimum Bedrooms</label>
+                        <div class="btn-group d-flex flex-wrap" role="group" aria-label="Bedroom selection">
+                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="0">0+</button>
+                            <button type="button" class="btn btn-outline-primary bedroom-btn active" data-value="1">1+</button>
+                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="2">2+</button>
+                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="3">3+</button>
+                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="4">4+</button>
+                            <button type="button" class="btn btn-outline-primary bedroom-btn" data-value="5">5+</button>
                         </div>
                     </div>
                     
@@ -112,4 +111,65 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize price slider
+        const priceSlider = document.getElementById('price-slider');
+        const minPriceInput = document.getElementById('min_price');
+        const maxPriceInput = document.getElementById('max_price');
+        const minPriceLabel = document.getElementById('price-min');
+        const maxPriceLabel = document.getElementById('price-max');
+        
+        noUiSlider.create(priceSlider, {
+            start: [parseInt(minPriceInput.value) || 0, parseInt(maxPriceInput.value) || 3000],
+            connect: true,
+            step: 50,
+            range: {
+                'min': 0,
+                'max': 3000
+            },
+            format: {
+                to: function (value) {
+                    return Math.round(value);
+                },
+                from: function (value) {
+                    return Math.round(value);
+                }
+            }
+        });
+        
+        priceSlider.noUiSlider.on('update', function(values, handle) {
+            const min = values[0];
+            const max = values[1];
+            
+            minPriceInput.value = min;
+            maxPriceInput.value = max;
+            minPriceLabel.textContent = '€' + min;
+            maxPriceLabel.textContent = '€' + max;
+        });
+        
+        // Handle bedroom selection
+        const bedroomButtons = document.querySelectorAll('.bedroom-btn');
+        const minBedroomsInput = document.getElementById('min_bedrooms');
+        
+        bedroomButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                bedroomButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Update hidden input
+                const value = this.getAttribute('data-value');
+                minBedroomsInput.value = value;
+                document.getElementById('max_bedrooms').value = 10; // Always set max to 10
+            });
+        });
+    });
+</script>
 {% endblock %}

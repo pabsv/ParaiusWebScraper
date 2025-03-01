@@ -4,8 +4,8 @@ from flask import Blueprint, render_template, redirect, url_for, flash, request,
 from app import db
 from app.models import User, Subscription, Listing
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField
-from wtforms.validators import DataRequired, Email, NumberRange, Optional
+from wtforms import StringField, SubmitField, HiddenField
+from wtforms.validators import DataRequired, Email, Optional
 
 main_bp = Blueprint('main', __name__)
 
@@ -15,10 +15,10 @@ def before_request():
 
 class SubscriptionForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
-    min_price = IntegerField('Minimum Price (€)', default=0, validators=[NumberRange(min=0, max=10000), Optional()])
-    max_price = IntegerField('Maximum Price (€)', default=3000, validators=[NumberRange(min=0, max=10000), Optional()])
-    min_bedrooms = IntegerField('Minimum Bedrooms', default=1, validators=[NumberRange(min=0, max=10), Optional()])
-    max_bedrooms = IntegerField('Maximum Bedrooms', default=5, validators=[NumberRange(min=0, max=10), Optional()])
+    min_price = HiddenField('Min Price', default='0')
+    max_price = HiddenField('Max Price', default='3000')
+    min_bedrooms = HiddenField('Min Bedrooms', default='1')
+    max_bedrooms = HiddenField('Max Bedrooms', default='5')
     submit = SubmitField('Subscribe')
 
 @main_bp.route('/', methods=['GET', 'POST'])
@@ -32,10 +32,14 @@ def index():
             db.session.add(user)
         
         # Prepare subscription parameters
-        min_price = max(0, form.min_price.data or 0)
-        max_price = min(10000, form.max_price.data or 3000)
-        min_bedrooms = max(0, form.min_bedrooms.data or 0)
-        max_bedrooms = min(10, form.max_bedrooms.data or 5)
+        try:
+            min_price = max(0, int(form.min_price.data or 0))
+            max_price = min(10000, int(form.max_price.data or 3000))
+            min_bedrooms = max(0, int(form.min_bedrooms.data or 0))
+            max_bedrooms = min(10, int(form.max_bedrooms.data or 5))
+        except ValueError:
+            flash('Invalid price or bedroom values', 'danger')
+            return redirect(url_for('main.index'))
         
         # Check if this subscription already exists
         existing_sub = Subscription.query.filter_by(
