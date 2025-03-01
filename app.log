@@ -506,3 +506,101 @@
 2025-03-01 14:37:29,242 - app.tasks - INFO - Scheduled task to run every 300 seconds
 2025-03-01 14:37:29,244 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
 2025-03-01 14:37:29,245 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 14:40:21,510 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 14:40:21,537 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 14:40:21,538 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 14:40:21,540 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 14:40:21,542 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 14:40:21,559 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 14:40:21,560 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 14:40:28,739 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:40:28] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 14:40:28,872 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:40:28] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:40:28,873 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:40:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:40:29,609 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:40:29] "GET / HTTP/1.1" 200 -
+2025-03-01 14:40:29,677 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:40:29] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:40:29,678 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:40:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:41:39,567 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:39] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-01 14:41:39,588 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:39] "GET / HTTP/1.1" 200 -
+2025-03-01 14:41:39,635 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:39] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:41:39,638 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:41:43,632 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:43] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 14:41:43,692 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:41:43,693 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:41:53,132 - app.scraper.utils - INFO - Preparing email with 1 new listings for pablovegarzv2@gmail.com
+2025-03-01 14:41:56,487 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-01 14:41:56,489 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:56] "[32mGET /test_email/1?email=pablovegarzv2@gmail.com HTTP/1.1[0m" 302 -
+2025-03-01 14:41:56,506 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:56] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 14:41:56,569 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:56] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:41:56,571 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:41:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:42:46,653 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 14:42:46,654 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 14:42:49,639 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:42:49,644 - app.scraper.utils - INFO - Found 0 existing listings in database
+2025-03-01 14:42:49,645 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 14:42:54,740 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 14:42:55,166 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:42:55,408 - app.scraper.utils - INFO - Found new listing: Studio Strijpsestraat - €775 per month
+2025-03-01 14:42:55,619 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:42:55,828 - app.scraper.utils - INFO - Found new listing: Flat Keizersgracht - €1,495 per month
+2025-03-01 14:42:56,015 - app.scraper.utils - INFO - Found new listing: Flat St Rochusstraat - €1,700 per month
+2025-03-01 14:42:56,198 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:42:56,364 - app.scraper.utils - INFO - Found new listing: Flat Jan van Lieshoutstraat 24 G - €1,750 per month
+2025-03-01 14:42:56,571 - app.scraper.utils - INFO - Found new listing: Flat Lichtstraat - €2,400 per month
+2025-03-01 14:42:56,764 - app.scraper.utils - INFO - Found new listing: Flat Lupinestraat - €1,395 per month
+2025-03-01 14:42:56,947 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:42:57,142 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:42:57,321 - app.scraper.utils - INFO - Found new listing: Studio Strijpsestraat - €775 per month
+2025-03-01 14:42:57,564 - app.scraper.utils - INFO - Found new listing: Studio Woenselsestraat - €795 per month
+2025-03-01 14:42:57,757 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:42:57,973 - app.scraper.utils - INFO - Found new listing: Flat Fazantlaan - €1,850 per month
+2025-03-01 14:42:58,193 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:42:58,409 - app.scraper.utils - INFO - Found new listing: Room Hobbemastraat - €563 per month
+2025-03-01 14:42:58,593 - app.scraper.utils - INFO - Found new listing: Flat Hoogstraat - €1,450 per month
+2025-03-01 14:42:58,767 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:42:58,937 - app.scraper.utils - INFO - Found new listing: House Gestelsestraat - €2,475 per month
+2025-03-01 14:42:59,130 - app.scraper.utils - INFO - Found new listing: Flat Otterstraat 53 - €1,295 per month
+2025-03-01 14:42:59,361 - app.scraper.utils - INFO - Found new listing: Flat Otterstraat 51 - €1,295 per month
+2025-03-01 14:42:59,577 - app.scraper.utils - INFO - Found new listing: Flat Jonckbloetlaan - €1,627 per month
+2025-03-01 14:42:59,772 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:42:59,972 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:43:00,152 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:43:00,348 - app.scraper.utils - INFO - Found new listing: Room Reinkenstraat - €545 per month
+2025-03-01 14:43:00,557 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:43:00,715 - app.scraper.utils - INFO - Found new listing: Flat Stoomstraat - €2,500 per month
+2025-03-01 14:43:00,885 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:43:01,053 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:43:01,242 - app.scraper.utils - INFO - Found new listing: House Mecklenburgstraat - €2,195 per month
+2025-03-01 14:43:01,269 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 14:43:01,312 - app.scraper.utils - INFO - Added 31 new listings to database
+2025-03-01 14:43:01,313 - app.scraper.utils - INFO - Matching 31 new listings to subscriptions
+2025-03-01 14:43:01,317 - app.scraper.utils - INFO - Found 1 active subscriptions
+2025-03-01 14:43:01,354 - app.scraper.utils - INFO - Sending notification to pablovegarzv2@gmail.com with 27 matched listings
+2025-03-01 14:43:01,356 - app.scraper.utils - INFO - Preparing email with 27 new listings for pablovegarzv2@gmail.com
+2025-03-01 14:43:03,723 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-01 14:43:07,065 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:43:11,133 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 31 new listings added
+2025-03-01 14:43:11,155 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 14:43:11,158 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:43:11] "[32mGET /test_scraper HTTP/1.1[0m" 302 -
+2025-03-01 14:43:11,185 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:43:11] "GET / HTTP/1.1" 200 -
+2025-03-01 14:43:11,246 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:43:11] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:43:11,248 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:43:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:44:47,582 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:44:47] "GET /browse_listings HTTP/1.1" 200 -
+2025-03-01 14:44:47,632 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:44:47] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:44:47,634 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:44:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:45:21,543 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:50:21 CET)" (scheduled at 2025-03-01 14:45:21.537445+01:00)
+2025-03-01 14:45:21,545 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 14:45:21,545 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 14:45:21,546 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 14:45:24,368 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:45:24,370 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 14:45:24,371 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 14:45:27,473 - app.scraper.utils - INFO - Found 32 listings on page 1
+2025-03-01 14:45:32,937 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-01 14:45:36,255 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:45:40,315 - app.tasks - INFO - Scraper completed successfully: 32 listings found, 0 new listings added
+2025-03-01 14:45:40,335 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 14:45:40,336 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:50:21 CET)" executed successfully
+2025-03-01 14:46:50,540 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:46:50] "GET / HTTP/1.1" 200 -
+2025-03-01 14:46:50,589 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:46:50] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:46:50,593 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:46:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
