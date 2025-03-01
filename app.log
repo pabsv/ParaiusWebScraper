@@ -604,3 +604,105 @@
 2025-03-01 14:46:50,540 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:46:50] "GET / HTTP/1.1" 200 -
 2025-03-01 14:46:50,589 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:46:50] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
 2025-03-01 14:46:50,593 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:46:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:50:21,543 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:55:21 CET)" (scheduled at 2025-03-01 14:50:21.537445+01:00)
+2025-03-01 14:50:21,544 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-01 14:50:21,545 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-01 14:50:21,545 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-01 14:50:24,590 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:50:24,596 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-01 14:50:24,597 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-01 14:50:28,414 - app.scraper.utils - ERROR - Error scraping page 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-03-01 14:50:28,478 - app.scraper.utils - ERROR - Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\app\scraper\utils.py", line 103, in scrape_eindhoven_apartments
+    driver.get(current_url)
+    ~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in get
+    self.execute(Command.GET, {"url": url})
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 343, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 291, in execute
+    return self._request(command_info[0], url, body=data)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 312, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        method, url, fields=fields, headers=headers, **urlopen_kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+2025-03-01 14:50:32,532 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000273966F5F30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/eb4f19a120ef94bdd758447c9046ef5e
+2025-03-01 14:50:36,606 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027395F98510>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/eb4f19a120ef94bdd758447c9046ef5e
+2025-03-01 14:50:40,665 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027396675250>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/eb4f19a120ef94bdd758447c9046ef5e
+2025-03-01 14:50:48,800 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:50:48,801 - app.tasks - INFO - Scraper completed successfully: 0 listings found, 0 new listings added
+2025-03-01 14:50:48,818 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-01 14:50:48,819 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:55:21 CET)" executed successfully
+2025-03-01 14:50:48,881 - apscheduler.scheduler - INFO - Scheduler has been shut down
