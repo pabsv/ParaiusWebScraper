@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Browse Listings{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Current Eindhoven Listings</h2>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('main.browse_listings') }}" method="GET" class="mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label class="form-label">Min Price</label>
+                            <input type="number" name="min_price" class="form-control" value="{{ min_price }}">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Max Price</label>
+                            <input type="number" name="max_price" class="form-control" value="{{ max_price }}">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Min Bedrooms</label>
+                            <input type="number" name="min_bedrooms" class="form-control" value="{{ min_bedrooms }}">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Max Bedrooms</label>
+                            <input type="number" name="max_bedrooms" class="form-control" value="{{ max_bedrooms }}">
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">Filter</button>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <a href="{{ url_for('main.browse_listings') }}" class="btn btn-secondary w-100">Reset</a>
+                        </div>
+                    </div>
+                </form>
+                
+                {% if listings.items %}
+                    <div class="row">
+                        {% for listing in listings.items %}
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header">
+                                        <h5 class="card-title mb-0 text-truncate">{{ listing.title }}</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <strong class="text-success">{{ listing.price_text }}</strong>
+                                        </div>
+                                        {% if listing.address %}
+                                            <div class="mb-2 text-muted">
+                                                <i class="bi bi-geo-alt"></i> {{ listing.address }}
+                                            </div>
+                                        {% endif %}
+                                        <div class="mb-2">
+                                            {% if listing.bedrooms %}
+                                                <span class="badge bg-info me-2">{{ listing.bedrooms }} bedrooms</span>
+                                            {% endif %}
+                                            {% if listing.area %}
+                                                <span class="badge bg-secondary me-2">{{ listing.area }} m²</span>
+                                            {% endif %}
+                                        </div>
+                                        {% if listing.specs %}
+                                            <div class="mb-3 small">
+                                                {{ listing.specs }}
+                                            </div>
+                                        {% endif %}
+                                        <div class="text-muted small mb-2">
+                                            Added: {{ listing.date_found.strftime('%Y-%m-%d %H:%M') }}
+                                        </div>
+                                        <a href="{{ listing.url }}" target="_blank" class="btn btn-sm btn-outline-primary">View on Pararius</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <nav aria-label="Listings pagination">
+                        <ul class="pagination justify-content-center">
+                            {% if listings.has_prev %}
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.prev_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">Previous</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">Previous</span>
+                                </li>
+                            {% endif %}
+                            
+                            {% for page_num in listings.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                                {% if page_num %}
+                                    {% if page_num == listings.page %}
+                                        <li class="page-item active">
+                                            <span class="page-link">{{ page_num }}</span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ url_for('main.browse_listings', page=page_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">{{ page_num }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <span class="page-link">...</span>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            {% if listings.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.next_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">Next</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">Next</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% else %}
+                    <div class="alert alert-info">No listings found matching your criteria.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

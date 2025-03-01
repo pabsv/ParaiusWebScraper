@@ -2,6 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
+import re
 from app import db
 from app.models import Listing, Subscription, User
 from flask import current_app
@@ -15,6 +16,275 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 logger = logging.getLogger(__name__)
+
+def parse_price(price_text):
+    """Extract price as integer from price text"""
+    if not price_text:
+        return None
+    
+    # Extract numeric value using regex
+    match = re.search(r'€\s*([\d.,]+)', price_text)
+    if match:
+        # Remove thousand separators and convert to integer
+        price_str = match.group(1).replace('.', '').replace(',', '')
+        try:
+            return int(price_str)
+        except ValueError:
+            logger.error(f"Failed to parse price: {price_text}")
+    
+    return None
+
+def parse_bedrooms(specs_text):
+    """Extract number of bedrooms from specifications text"""
+    if not specs_text:
+        return None
+    
+    # Look for patterns like "2 rooms" or "2 kamers"
+    match = re.search(r'(\d+)\s*(?:room|rooms|kamer|kamers)', specs_text, re.IGNORECASE)
+    if match:
+        try:
+            return int(match.group(1))
+        except ValueError:
+            pass
+    
+    return None
+
+def parse_area(specs_text):
+    """Extract area in m² from specifications text"""
+    if not specs_text:
+        return None
+    
+    # Look for patterns like "80 m²"
+    match = re.search(r'(\d+)\s*m²', specs_text)
+    if match:
+        try:
+            return int(match.group(1))
+        except ValueError:
+            pass
+    
+    return None
+
+def scrape_eindhoven_apartments():
+    """Scrape all apartment listings in Eindhoven"""
+    base_url = "https://www.pararius.com/apartments/eindhoven"
+    logger.info(f"Starting Eindhoven apartment scraper for URL: {base_url}")
+    
+    # Setup Chrome options
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--window-size=1920,1080")
+    
+    driver = None
+    try:
+        # Initialize Chrome WebDriver
+        driver = webdriver.Chrome(options=chrome_options)
+        logger.info("Successfully initialized Chrome WebDriver")
+        
+        # Get existing listing URLs from the database
+        existing_urls = set(url[0] for url in db.session.query(Listing.url).all())
+        logger.info(f"Found {len(existing_urls)} existing listings in database")
+        
+        # Lists to track all listings and new listings
+        all_listings = []
+        new_listings = []
+        
+        current_url = base_url
+        page_num = 1
+        max_pages = 10  # Limit to 10 pages to avoid overloading
+        
+        while current_url and page_num <= max_pages:
+            logger.info(f"Scraping page {page_num}: {current_url}")
+            
+            try:
+                # Navigate to the current page
+                driver.get(current_url)
+                
+                # Wait for the listings to load
+                wait = WebDriverWait(driver, 10)
+                listings = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li.search-list__item--listing')))
+                
+                logger.info(f"Found {len(listings)} listings on page {page_num}")
+                
+                # Process each listing
+                for listing in listings:
+                    try:
+                        # Extract listing details
+                        title = listing.find_element(By.CSS_SELECTOR, 'h2.listing-search-item__title').text
+                        price_text = listing.find_element(By.CSS_SELECTOR, 'div.listing-search-item__price').text
+                        url = listing.find_element(By.CSS_SELECTOR, 'a.listing-search-item__link--title').get_attribute('href')
+                        
+                        try:
+                            address = listing.find_element(By.CSS_SELECTOR, 'div.listing-search-item__sub-title').text
+                        except:
+                            address = None
+                        
+                        # Get specifications
+                        try:
+                            specs_elems = listing.find_elements(By.CSS_SELECTOR, 'ul.illustrated-features__list li')
+                            specs = [elem.text for elem in specs_elems]
+                            specs_str = ', '.join(specs)
+                        except:
+                            specs = []
+                            specs_str = ""
+                        
+                        # Parse numeric values
+                        price = parse_price(price_text)
+                        bedrooms = parse_bedrooms(specs_str)
+                        area = parse_area(specs_str)
+                        
+                        if all([title, price_text, url, price]):
+                            listing_data = {
+                                'title': title,
+                                'price': price,
+                                'price_text': price_text,
+                                'url': url,
+                                'address': address,
+                                'bedrooms': bedrooms,
+                                'area': area,
+                                'specs': specs_str,
+                                'date_found': datetime.now(),
+                                'subscription_id': None  # No specific subscription yet
+                            }
+                            
+                            all_listings.append(listing_data)
+                            
+                            # Check if this is a new listing
+                            if url not in existing_urls:
+                                new_listings.append(listing_data)
+                                logger.info(f"Found new listing: {title} - {price_text}")
+                    
+                    except Exception as e:
+                        logger.error(f"Error processing listing: {str(e)}")
+                        continue
+                
+                # Find the next page link if it exists
+                try:
+                    next_page = driver.find_element(By.CSS_SELECTOR, 'a[rel="next"]')
+                    current_url = next_page.get_attribute('href')
+                    page_num += 1
+                except:
+                    logger.info("No next page found, ending scrape")
+                    current_url = None
+            
+            except Exception as e:
+                logger.error(f"Error scraping page {page_num}: {str(e)}")
+                logger.error(traceback.format_exc())
+                current_url = None
+        
+        # Save new listings to database
+        new_listing_objects = []
+        for data in new_listings:
+            try:
+                # Double-check URL is not in database
+                if data['url'] in existing_urls:
+                    continue
+                
+                # Create new listing object
+                listing_obj = Listing(
+                    title=data['title'],
+                    price=data['price'],
+                    price_text=data['price_text'],
+                    url=data['url'],
+                    address=data['address'],
+                    bedrooms=data['bedrooms'],
+                    area=data['area'],
+                    specs=data['specs'],
+                    date_found=data['date_found']
+                )
+                
+                db.session.add(listing_obj)
+                db.session.flush()  # Get the ID without committing
+                existing_urls.add(data['url'])  # Update set to prevent duplicates
+                new_listing_objects.append(listing_obj)
+            
+            except Exception as e:
+                db.session.rollback()
+                logger.error(f"Error adding listing to database: {str(e)}")
+                continue
+        
+        # Commit all new listings
+        if new_listing_objects:
+            try:
+                db.session.commit()
+                logger.info(f"Added {len(new_listing_objects)} new listings to database")
+            except Exception as e:
+                db.session.rollback()
+                logger.error(f"Error committing new listings: {str(e)}")
+        
+        # Match new listings with subscriptions and send notifications
+        if new_listing_objects:
+            match_listings_to_subscriptions(new_listing_objects)
+        
+        return True, len(all_listings), len(new_listing_objects)
+    
+    except Exception as e:
+        logger.error(f"Error in Eindhoven scraper: {str(e)}")
+        logger.error(traceback.format_exc())
+        return False, 0, 0
+    
+    finally:
+        if driver:
+            driver.quit()
+            logger.info("WebDriver closed")
+
+def match_listings_to_subscriptions(new_listings):
+    """Match new listings with active subscriptions and send notifications"""
+    if not new_listings:
+        logger.info("No new listings to match")
+        return
+    
+    logger.info(f"Matching {len(new_listings)} new listings to subscriptions")
+    
+    # Get all active subscriptions
+    active_subscriptions = Subscription.query.filter_by(active=True).all()
+    logger.info(f"Found {len(active_subscriptions)} active subscriptions")
+    
+    # Group subscriptions by user
+    user_subscriptions = {}
+    for sub in active_subscriptions:
+        if sub.user_id not in user_subscriptions:
+            user_subscriptions[sub.user_id] = {
+                'user': sub.user,
+                'matched_listings': [],
+                'subscriptions': []
+            }
+        user_subscriptions[sub.user_id]['subscriptions'].append(sub)
+    
+    # Match listings to subscriptions
+    for listing in new_listings:
+        for user_id, data in user_subscriptions.items():
+            for sub in data['subscriptions']:
+                # Check if listing matches subscription criteria
+                if (listing.price >= sub.min_price and 
+                    listing.price <= sub.max_price and 
+                    (listing.bedrooms is None or  # If bedrooms unknown, include it
+                     (listing.bedrooms >= sub.min_bedrooms and 
+                      listing.bedrooms <= sub.max_bedrooms))):
+                    
+                    # Add to user's matched listings if not already there
+                    if listing not in data['matched_listings']:
+                        data['matched_listings'].append(listing)
+    
+    # Send notifications to users with matched listings
+    for user_id, data in user_subscriptions.items():
+        if data['matched_listings']:
+            user = data['user']
+            listings = data['matched_listings']
+            logger.info(f"Sending notification to {user.email} with {len(listings)} matched listings")
+            send_email_notification(user.email, listings)
+            
+            # Mark listings as notified
+            for listing in listings:
+                listing.notified = True
+            
+            try:
+                db.session.commit()
+            except Exception as e:
+                db.session.rollback()
+                logger.error(f"Error marking listings as notified: {str(e)}")
 
 def send_email_notification(user_email, new_listings):
     """Send email notification about new listings."""
@@ -35,10 +305,10 @@ def send_email_notification(user_email, new_listings):
     msg = MIMEMultipart('alternative')
     msg['From'] = sender
     msg['To'] = user_email
-    msg['Subject'] = f"🏠 New Apartments Found - {datetime.now().strftime('%d %B %Y')}"
+    msg['Subject'] = f"🏠 New Apartments Found in Eindhoven - {datetime.now().strftime('%d %B %Y')}"
 
     # Create both plain text and HTML versions
-    text_body = "New listings found:\n\n"
+    text_body = "New listings found matching your criteria:\n\n"
     html_body = """
     <!DOCTYPE html>
     <html>
@@ -81,6 +351,10 @@ def send_email_notification(user_email, new_listings):
                 color: #4a5568;
                 margin-bottom: 8px;
             }
+            .features {
+                color: #4a5568;
+                margin-bottom: 8px;
+            }
             .address {
                 color: #718096;
                 font-style: italic;
@@ -110,16 +384,20 @@ def send_email_notification(user_email, new_listings):
     </head>
     <body>
         <div class="header">
-            <h2>🏠 New Apartments Found</h2>
+            <h2>🏠 New Apartments Found in Eindhoven</h2>
         </div>
     """
 
     for listing in new_listings:
         # Plain text version
         text_body += f"📍 {listing.title}\n"
-        text_body += f"💶 {listing.price}\n"
+        text_body += f"💶 {listing.price_text}\n"
         if listing.address:
             text_body += f"🏠 {listing.address}\n"
+        if listing.bedrooms:
+            text_body += f"🛏️ {listing.bedrooms} bedrooms\n"
+        if listing.area:
+            text_body += f"📏 {listing.area} m²\n"
         if listing.specs:
             text_body += f"ℹ️ {listing.specs}\n"
         text_body += f"🔎 Found: {listing.date_found.strftime('%Y-%m-%d %H:%M')}\n"
@@ -130,11 +408,23 @@ def send_email_notification(user_email, new_listings):
         html_body += f"""
         <div class="listing">
             <div class="title">📍 {listing.title}</div>
-            <div class="price">💶 {listing.price}</div>
+            <div class="price">💶 {listing.price_text}</div>
             <div class="date">🔎 Found: {listing.date_found.strftime('%Y-%m-%d %H:%M')}</div>
         """
         if listing.address:
             html_body += f'<div class="address">🏠 {listing.address}</div>'
+        
+        features_html = ""
+        if listing.bedrooms:
+            features_html += f"🛏️ {listing.bedrooms} bedrooms"
+        if listing.area:
+            if features_html:
+                features_html += " | "
+            features_html += f"📏 {listing.area} m²"
+        
+        if features_html:
+            html_body += f'<div class="features">{features_html}</div>'
+            
         if listing.specs:
             html_body += f'<div class="specs">ℹ️ {listing.specs}</div>'
         
@@ -143,8 +433,8 @@ def send_email_notification(user_email, new_listings):
 
     html_body += """
         <div class="footer">
-            <p>This is an automated message from your Pararius Apartment Finder.<br>
-            New listings will be sent as they become available.</p>
+            <p>This is an automated message from your Eindhoven Apartment Finder.<br>
+            New listings will be sent as they match your subscription criteria.</p>
         </div>
     </body>
     </html>
@@ -165,150 +455,6 @@ def send_email_notification(user_email, new_listings):
     except Exception as e:
         logger.error(f"Failed to send email: {str(e)}")
         return False
-def run_spider_for_subscription(subscription_id):
-    """Run spider for a specific subscription using direct Selenium approach without Scrapy."""
-    try:
-        # Get subscription details
-        subscription = Subscription.query.get(subscription_id)
-        if not subscription or not subscription.active:
-            logger.info(f"Subscription {subscription_id} is not active or does not exist.")
-            return False
-        
-        logger.info(f"Running scraper for subscription {subscription_id} ({subscription.url})")
-        
-        # Get existing listing URLs for this subscription
-        existing_urls = set([listing.url for listing in subscription.listings])
-        
-        # Setup Chrome options
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-gpu")
-        chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--window-size=1920,1080")
-        
-        driver = None
-        try:
-            # Initialize Chrome WebDriver
-            driver = webdriver.Chrome(options=chrome_options)
-            logger.info("Successfully initialized Chrome WebDriver")
-            
-            # Navigate to the URL
-            driver.get(subscription.url)
-            logger.info(f"Navigated to {subscription.url}")
-            
-            # Wait for the listings to load
-            wait = WebDriverWait(driver, 10)
-            listings = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li.search-list__item--listing')))
-            
-            logger.info(f"Found {len(listings)} total listings")
-            
-            new_listings = []
-            new_listings_data = []
-            
-            for listing in listings:
-                try:
-                    # Extract listing details
-                    title = listing.find_element(By.CSS_SELECTOR, 'h2.listing-search-item__title').text
-                    price = listing.find_element(By.CSS_SELECTOR, 'div.listing-search-item__price').text
-                    url = listing.find_element(By.CSS_SELECTOR, 'a.listing-search-item__link--title').get_attribute('href')
-                    
-                    try:
-                        address = listing.find_element(By.CSS_SELECTOR, 'div.listing-search-item__sub-title').text
-                    except:
-                        address = None
-                    
-                    # Get specifications
-                    try:
-                        specs = [elem.text for elem in listing.find_elements(By.CSS_SELECTOR, 'ul.illustrated-features__list li')]
-                        specs_str = ', '.join(specs)
-                    except:
-                        specs_str = ""
-                    
-                    if all([title, price, url]) and url not in existing_urls:
-                        # Store listing data first, add to database later
-                        new_listings_data.append({
-                            'title': title,
-                            'price': price,
-                            'url': url,
-                            'address': address,
-                            'specs': specs_str,
-                            'date_found': datetime.now(),
-                            'subscription_id': subscription_id
-                        })
-                        logger.info(f"Found new listing: {title} - {price}")
-                except Exception as e:
-                    logger.error(f"Error processing listing: {str(e)}")
-                    continue
-            
-            # Now add all listings to the database with proper error handling
-            for data in new_listings_data:
-                try:
-                    # Check if URL already exists in database (double-check)
-                    existing_listing = Listing.query.filter_by(url=data['url']).first()
-                    if existing_listing:
-                        logger.info(f"Listing with URL {data['url']} already exists in database.")
-                        continue
-                        
-                    # Create new listing in database
-                    listing_obj = Listing(
-                        title=data['title'],
-                        price=data['price'],
-                        url=data['url'],
-                        address=data['address'],
-                        specs=data['specs'],
-                        date_found=data['date_found'],
-                        subscription_id=data['subscription_id']
-                    )
-                    db.session.add(listing_obj)
-                    db.session.commit()  # Commit each listing individually to avoid losing all on error
-                    new_listings.append(listing_obj)
-                except Exception as e:
-                    db.session.rollback()
-                    logger.error(f"Error saving listing to database: {str(e)}")
-                    continue
-            
-            if new_listings:
-                logger.info(f"Found {len(new_listings)} new listings for subscription {subscription_id}")
-                # Send email notification
-                user_email = subscription.user.email
-                send_email_notification(user_email, new_listings)
-                
-                # Mark listings as notified
-                for listing in new_listings:
-                    listing.notified = True
-                db.session.commit()
-            else:
-                logger.info(f"No new listings found for subscription {subscription_id}")
-            
-            # Update last checked timestamp
-            subscription.last_checked = datetime.now()
-            db.session.commit()
-            
-            return True
-        except Exception as e:
-            db.session.rollback()
-            logger.error(f"Error during scraping: {str(e)}")
-            logger.error(traceback.format_exc())
-            return False
-        finally:
-            # Clean up
-            if driver:
-                driver.quit()
-                logger.info("WebDriver closed")
-    except Exception as e:
-        db.session.rollback()
-        logger.error(f"Error running scraper for subscription {subscription_id}: {str(e)}")
-        logger.error(traceback.format_exc())
-        return False
-
-def run_manual_check(subscription_id):
-    """Run a manual check for a specific subscription."""
-    logger.info(f"Running manual check for subscription {subscription_id}")
-    return run_spider_for_subscription(subscription_id)
-
-
-#Test notificaitons without adding stuff to the database
 
 def test_email_notification(subscription_id):
     """Create a test listing and send a test email notification."""
@@ -323,9 +469,12 @@ def test_email_notification(subscription_id):
         # Create a test listing that won't be saved to the database
         test_listing = Listing(
             title="TEST LISTING - Please ignore",
-            price="€1,500 per month",
+            price=1500,
+            price_text="€1,500 per month",
             url="https://www.pararius.com/test-listing",
             address="Test Street 123, Eindhoven",
+            bedrooms=2,
+            area=80,
             specs="80m², 2 rooms, 1 bathroom",
             date_found=datetime.now(),
             subscription_id=subscription.id

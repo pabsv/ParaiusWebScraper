@@ -480,3 +480,29 @@
 2025-03-01 14:03:28,222 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:03:28] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
 2025-03-01 14:06:25,565 - apscheduler.scheduler - INFO - Scheduler has been shut down
 2025-03-01 14:06:25,756 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 14:34:42,634 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 14:34:42,660 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 14:34:42,661 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 14:34:42,664 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 14:34:42,665 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 14:34:52,740 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 14:34:52,769 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 14:34:52,769 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 14:34:52,772 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 14:34:52,772 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 14:37:09,976 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 14:37:10,002 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 14:37:10,003 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 14:37:10,006 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 14:37:10,007 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 14:37:10,064 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 14:37:11,834 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 14:37:11,859 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 14:37:11,859 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 14:37:11,861 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 14:37:11,862 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 14:37:29,219 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 14:37:29,242 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 14:37:29,242 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 14:37:29,244 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 14:37:29,245 - apscheduler.scheduler - INFO - Scheduler started

@@ -1,8 +1,8 @@
-"""Initial migration
+"""Initial migration with new models
 
-Revision ID: 93a707eb4cec
+Revision ID: e896ea64fe9a
 Revises: 
-Create Date: 2025-02-24 21:33:09.817381
+Create Date: 2025-03-01 14:37:11.929524
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '93a707eb4cec'
+revision = 'e896ea64fe9a'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,7 +29,10 @@ def upgrade():
 
     op.create_table('subscription',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('url', sa.String(length=500), nullable=False),
+    sa.Column('min_price', sa.Integer(), nullable=True),
+    sa.Column('max_price', sa.Integer(), nullable=True),
+    sa.Column('min_bedrooms', sa.Integer(), nullable=True),
+    sa.Column('max_bedrooms', sa.Integer(), nullable=True),
     sa.Column('active', sa.Boolean(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('last_checked', sa.DateTime(), nullable=True),
@@ -40,13 +43,16 @@ def upgrade():
     op.create_table('listing',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=200), nullable=False),
-    sa.Column('price', sa.String(length=50), nullable=False),
+    sa.Column('price', sa.Integer(), nullable=False),
+    sa.Column('price_text', sa.String(length=50), nullable=False),
     sa.Column('url', sa.String(length=500), nullable=False),
     sa.Column('address', sa.String(length=200), nullable=True),
+    sa.Column('bedrooms', sa.Integer(), nullable=True),
+    sa.Column('area', sa.Integer(), nullable=True),
     sa.Column('specs', sa.Text(), nullable=True),
     sa.Column('date_found', sa.DateTime(), nullable=True),
     sa.Column('notified', sa.Boolean(), nullable=True),
-    sa.Column('subscription_id', sa.Integer(), nullable=False),
+    sa.Column('subscription_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['subscription_id'], ['subscription.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('url')

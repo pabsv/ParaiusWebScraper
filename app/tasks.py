@@ -1,7 +1,7 @@
 #tasks.py
 from app import db, scheduler
 from app.models import Subscription
-from app.scraper.utils import run_spider_for_subscription
+from app.scraper.utils import scrape_eindhoven_apartments
 import logging
 from datetime import datetime
 
@@ -17,49 +17,53 @@ def setup_scheduler(app):
     
     # Define a function that will run with app context
     def run_check_with_context():
-        logger.info("Running scheduled task...")
+        logger.info("Running scheduled task to scrape Eindhoven listings...")
         with app.app_context():
-            check_all_subscriptions()
+            run_eindhoven_scraper()
     
     # Schedule the job
-    interval = app.config.get('SCRAPER_INTERVAL', 100)  # Use configured interval
+    interval = app.config.get('SCRAPER_INTERVAL', 300)  # Default: 5 minutes (300 seconds)
     scheduler.add_job(
         run_check_with_context,
         'interval',
         seconds=interval,
-        id='check_subscriptions',
+        id='scrape_eindhoven',
         replace_existing=True
     )
     
     logger.info(f"Scheduled task to run every {interval} seconds")
 
-def check_all_subscriptions():
-    """Check all active subscriptions for new listings."""
-    logger.info("Checking all active subscriptions for new listings...")
+def run_eindhoven_scraper():
+    """Run the Eindhoven apartment scraper"""
+    logger.info("Starting Eindhoven apartment scraper...")
     
     try:
-        # Get all active subscriptions
-        active_subscriptions = Subscription.query.filter_by(active=True).all()
-        logger.info(f"Found {len(active_subscriptions)} active subscriptions")
+        success, total_count, new_count = scrape_eindhoven_apartments()
         
-        success_count = 0
-        for subscription in active_subscriptions:
+        if success:
+            logger.info(f"Scraper completed successfully: {total_count} listings found, {new_count} new listings added")
+            
+            # Update last_checked timestamp for all active subscriptions
+            active_subscriptions = Subscription.query.filter_by(active=True).all()
+            now = datetime.now()
+            
+            for subscription in active_subscriptions:
+                subscription.last_checked = now
+            
             try:
-                result = run_spider_for_subscription(subscription.id)
-                if result:
-                    success_count += 1
+                db.session.commit()
+                logger.info(f"Updated last_checked timestamp for {len(active_subscriptions)} active subscriptions")
             except Exception as e:
-                logger.error(f"Error checking subscription {subscription.id}: {str(e)}")
-        
-        logger.info(f"Finished checking all active subscriptions. Success: {success_count}/{len(active_subscriptions)}")
-        return f"Checked {len(active_subscriptions)} subscriptions, {success_count} successful"
+                db.session.rollback()
+                logger.error(f"Error updating subscription timestamps: {str(e)}")
+            
+            return f"Found {total_count} listings, {new_count} new"
+        else:
+            logger.error("Scraper failed")
+            return "Scraper failed"
+    
     except Exception as e:
-        logger.error(f"Error in check_all_subscriptions: {str(e)}")
+        logger.error(f"Error in run_eindhoven_scraper: {str(e)}")
         import traceback
         logger.error(traceback.format_exc())
         return f"Error: {str(e)}"
-
-def run_manual_check(subscription_id):
-    """Run a manual check for a specific subscription."""
-    logger.info(f"Running manual check for subscription {subscription_id}")
-    return run_spider_for_subscription(subscription_id)

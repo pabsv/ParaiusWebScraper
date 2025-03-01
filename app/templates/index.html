@@ -7,11 +7,11 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h2 class="mb-0">Find Your Next Apartment</h2>
+                <h2 class="mb-0">Find Your Next Apartment in Eindhoven</h2>
             </div>
             <div class="card-body">
                 <p class="lead">
-                    Subscribe to receive email notifications for new apartment listings on Pararius.
+                    Subscribe to receive email notifications for new apartment listings in Eindhoven that match your criteria.
                 </p>
                 
                 <form method="POST" action="{{ url_for('main.index') }}">
@@ -29,19 +29,54 @@
                         {% endif %}
                     </div>
                     
-                    <div class="mb-3">
-                        {{ form.url.label(class="form-label") }}
-                        {{ form.url(class="form-control", placeholder="https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms") }}
-                        {% if form.url.errors %}
-                            <div class="text-danger">
-                                {% for error in form.url.errors %}
-                                    <small>{{ error }}</small>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                        <small class="form-text text-muted">
-                            Enter a Pararius search URL with your preferences (e.g., city, price range, number of bedrooms)
-                        </small>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            {{ form.min_price.label(class="form-label") }}
+                            {{ form.min_price(class="form-control", type="number") }}
+                            {% if form.min_price.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.min_price.errors %}
+                                        <small>{{ error }}</small>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.max_price.label(class="form-label") }}
+                            {{ form.max_price(class="form-control", type="number") }}
+                            {% if form.max_price.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.max_price.errors %}
+                                        <small>{{ error }}</small>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            {{ form.min_bedrooms.label(class="form-label") }}
+                            {{ form.min_bedrooms(class="form-control", type="number") }}
+                            {% if form.min_bedrooms.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.min_bedrooms.errors %}
+                                        <small>{{ error }}</small>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.max_bedrooms.label(class="form-label") }}
+                            {{ form.max_bedrooms(class="form-control", type="number") }}
+                            {% if form.max_bedrooms.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.max_bedrooms.errors %}
+                                        <small>{{ error }}</small>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                     
                     <div class="d-grid">
@@ -63,6 +98,16 @@
                         <button type="submit" class="btn btn-outline-primary">Check</button>
                     </div>
                 </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h3 class="mb-0">Browse Current Listings</h3>
+            </div>
+            <div class="card-body">
+                <p>View all currently available listings in Eindhoven:</p>
+                <a href="{{ url_for('main.browse_listings') }}" class="btn btn-success">Browse Listings</a>
             </div>
         </div>
     </div>
