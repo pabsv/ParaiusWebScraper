@@ -6,12 +6,22 @@ from dotenv import load_dotenv
 # Load environment variables from .env file if it exists
 load_dotenv()
 
+# Update the logging section in config.py
 # Set up logging
+log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format=log_format,
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler('app.log', mode='a')
+    ]
 )
 
+# Set specific log levels for verbose libraries
+logging.getLogger('selenium').setLevel(logging.WARNING)
+logging.getLogger('urllib3').setLevel(logging.WARNING)
+logging.getLogger('scrapy').setLevel(logging.WARNING)
 class Config:
     # Flask configuration
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'your-secret-key-for-development'
@@ -21,7 +31,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # Email configuration
-    MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smxtp.gmail.com'
+    MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smtp.gmail.com'
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587)
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') or True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'jeffhouser100@gmail.com'

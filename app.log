@@ -1,0 +1,482 @@
+2025-03-01 13:56:56,472 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 13:56:56,490 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 13:56:56,491 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 13:56:56,493 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 13:56:56,494 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 13:56:56,517 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 13:56:56,518 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 13:56:56,520 - werkzeug - INFO -  * Restarting with stat
+2025-03-01 13:56:57,448 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 13:56:57,466 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 13:56:57,466 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 13:56:57,468 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 13:56:57,469 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 13:56:57,477 - werkzeug - WARNING -  * Debugger is active!
+2025-03-01 13:56:57,479 - werkzeug - INFO -  * Debugger PIN: 123-124-842
+2025-03-01 13:57:00,996 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:57:00] "GET / HTTP/1.1" 200 -
+2025-03-01 13:57:01,100 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:57:01] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-01 13:57:01,140 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:57:01] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-03-01 13:57:01,410 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:57:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-01 13:58:04,544 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:04] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 13:58:04,581 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:04] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 13:58:04,584 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 13:58:11,843 - app.scraper.utils - INFO - Preparing email with 1 new listings for pablovegarzv2@gmail.com
+2025-03-01 13:58:15,731 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-01 13:58:15,733 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:15] "[32mGET /test_email/1?email=pablovegarzv2@gmail.com HTTP/1.1[0m" 302 -
+2025-03-01 13:58:15,746 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:15] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 13:58:15,773 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:15] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 13:58:15,779 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 13:58:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:01:47,975 - app.tasks - INFO - Running manual check for subscription 1
+2025-03-01 14:01:47,977 - app.scraper.utils - INFO - Running scraper for subscription 1 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:01:51,300 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:01:56,003 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:01:56,027 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:01:56,493 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:06:56 CET)" (scheduled at 2025-03-01 14:01:56.490881+01:00)
+2025-03-01 14:01:56,494 - app.tasks - INFO - Running scheduled task...
+2025-03-01 14:01:56,495 - app.tasks - INFO - Checking all active subscriptions for new listings...
+2025-03-01 14:01:56,520 - app.tasks - INFO - Found 4 active subscriptions
+2025-03-01 14:01:56,522 - app.scraper.utils - INFO - Running scraper for subscription 1 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:01:56,600 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:01:57,477 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:06:57 CET)" (scheduled at 2025-03-01 14:01:57.465921+01:00)
+2025-03-01 14:01:57,478 - app.tasks - INFO - Running scheduled task...
+2025-03-01 14:01:57,479 - app.tasks - INFO - Checking all active subscriptions for new listings...
+2025-03-01 14:01:57,481 - app.tasks - INFO - Found 4 active subscriptions
+2025-03-01 14:01:57,481 - app.scraper.utils - INFO - Running scraper for subscription 1 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:01:58,357 - app.scraper.utils - INFO - Found 1 new listings for subscription 1
+2025-03-01 14:01:58,358 - app.scraper.utils - INFO - Preparing email with 1 new listings for pablovegarzv2@gmail.com
+2025-03-01 14:01:58,983 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:01:58,984 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:01,655 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-01 14:02:02,270 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:02,274 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:02,304 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:02,317 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:02,593 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:02,693 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:04,009 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:04,010 - app.scraper.utils - INFO - No new listings found for subscription 1
+2025-03-01 14:02:04,147 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:04,147 - app.scraper.utils - INFO - No new listings found for subscription 1
+2025-03-01 14:02:04,372 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:06,616 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:06,616 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:08,436 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:02:08] "[32mGET /test_scraper/1 HTTP/1.1[0m" 302 -
+2025-03-01 14:02:08,445 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:02:08] "GET /subscriptions HTTP/1.1" 200 -
+2025-03-01 14:02:08,492 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:02:08] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 14:02:08,602 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:02:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 14:02:10,691 - app.scraper.utils - INFO - Running scraper for subscription 2 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:02:10,694 - app.scraper.utils - INFO - Running scraper for subscription 2 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:02:13,266 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:13,269 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:17,404 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:17,425 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:17,630 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:02:17,697 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:17,759 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:02:17,911 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:02:17,992 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:02:18,054 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:02:18,110 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:02:18,162 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:02:18,221 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:02:18,301 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:02:18,392 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:02:18,455 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:02:18,516 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:02:18,613 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:02:18,698 - app.scraper.utils - INFO - Found new listing: Flat Stationsweg - €1,850 per month
+2025-03-01 14:02:18,780 - app.scraper.utils - INFO - Found new listing: Flat Meergras 27 - €1,630 per month
+2025-03-01 14:02:18,851 - app.scraper.utils - INFO - Found new listing: Flat St Adrianusstraat - €1,675 per month
+2025-03-01 14:02:18,926 - app.scraper.utils - INFO - Found new listing: House Jan Heynslaan - €1,950 per month
+2025-03-01 14:02:19,002 - app.scraper.utils - INFO - Found new listing: Flat De Remise - €1,085 per month
+2025-03-01 14:02:19,085 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,875 per month
+2025-03-01 14:02:19,149 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,695 per month
+2025-03-01 14:02:19,218 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:19,227 - app.scraper.utils - INFO - Found new listing: Flat Leenderweg - €1,850 per month
+2025-03-01 14:02:19,236 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:19,326 - app.scraper.utils - INFO - Found new listing: House Graslinnen - €1,800 per month
+2025-03-01 14:02:19,396 - app.scraper.utils - INFO - Found new listing: Flat Begoniastraat - €1,850 per month
+2025-03-01 14:02:19,411 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:02:19,453 - app.scraper.utils - INFO - Found new listing: Flat Meerring 113 - €1,645 per month
+2025-03-01 14:02:19,465 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:19,498 - app.scraper.utils - INFO - Found new listing: Flat Meergras 13 - €1,630 per month
+2025-03-01 14:02:19,514 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:02:19,551 - app.scraper.utils - INFO - Found new listing: Flat Amundsenlaan - €1,975 per month
+2025-03-01 14:02:19,568 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:02:19,609 - app.scraper.utils - INFO - Found new listing: Flat Hortensiastraat - €1,845 per month
+2025-03-01 14:02:19,621 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:02:19,659 - app.scraper.utils - INFO - Found new listing: House Grasveld - €1,895 per month
+2025-03-01 14:02:19,669 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:02:19,720 - app.scraper.utils - INFO - Found new listing: Flat Paradijslaan - €1,875 per month
+2025-03-01 14:02:19,726 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:02:19,789 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €1,795 per month
+2025-03-01 14:02:19,791 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/decce4bd/schouwbroekseweg already exists in database.
+2025-03-01 14:02:19,793 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:19,794 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/45b8260b/ravensdonk already exists in database.
+2025-03-01 14:02:19,796 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/65af8674/jacobus-deckersstraat already exists in database.
+2025-03-01 14:02:19,798 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ac072bf9/gagelstraat already exists in database.
+2025-03-01 14:02:19,799 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/138224f5/havensingel already exists in database.
+2025-03-01 14:02:19,801 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:02:19,802 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/81e2e80a/hemelrijken already exists in database.
+2025-03-01 14:02:19,803 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ea3bcc80/grote-berg already exists in database.
+2025-03-01 14:02:19,805 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/c265c794/gestelsestraat already exists in database.
+2025-03-01 14:02:19,806 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/051bdb55/stratumsedijk already exists in database.
+2025-03-01 14:02:19,808 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/275aff2a/volderhof already exists in database.
+2025-03-01 14:02:19,810 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/2c1ca438/schoonhoeve already exists in database.
+2025-03-01 14:02:19,811 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/9fa2cae7/kees-de-beverpad already exists in database.
+2025-03-01 14:02:19,812 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6a055279/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:19,814 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/e4e4730c/stationsweg already exists in database.
+2025-03-01 14:02:19,815 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/75fcdb1a/meergras already exists in database.
+2025-03-01 14:02:19,816 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/79b056bb/st-adrianusstraat already exists in database.
+2025-03-01 14:02:19,817 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/eaed399c/jan-heynslaan already exists in database.
+2025-03-01 14:02:19,818 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ffaeaf6d/de-remise already exists in database.
+2025-03-01 14:02:19,818 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6857734e/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:19,819 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/5d815b77/gestelsestraat already exists in database.
+2025-03-01 14:02:19,820 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/cf78da38/leenderweg already exists in database.
+2025-03-01 14:02:19,820 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/dbdaa3c7/graslinnen already exists in database.
+2025-03-01 14:02:19,821 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/14c4dc97/begoniastraat already exists in database.
+2025-03-01 14:02:19,822 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/04934eec/meerring already exists in database.
+2025-03-01 14:02:19,823 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6148b9a8/meergras already exists in database.
+2025-03-01 14:02:19,824 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/8398a24e/amundsenlaan already exists in database.
+2025-03-01 14:02:19,824 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/fd44df39/hortensiastraat already exists in database.
+2025-03-01 14:02:19,825 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/a1c48c6f/grasveld already exists in database.
+2025-03-01 14:02:19,826 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/dd6fd37b/paradijslaan already exists in database.
+2025-03-01 14:02:19,827 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/d49f19c7/pastoor-van-arsplein already exists in database.
+2025-03-01 14:02:19,827 - app.scraper.utils - INFO - No new listings found for subscription 2
+2025-03-01 14:02:19,962 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:02:20,034 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:02:20,160 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:02:20,236 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:02:20,295 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:02:20,372 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:02:20,418 - app.scraper.utils - INFO - Found new listing: Flat Stationsweg - €1,850 per month
+2025-03-01 14:02:20,470 - app.scraper.utils - INFO - Found new listing: Flat Meergras 27 - €1,630 per month
+2025-03-01 14:02:20,520 - app.scraper.utils - INFO - Found new listing: Flat St Adrianusstraat - €1,675 per month
+2025-03-01 14:02:20,662 - app.scraper.utils - INFO - Found new listing: House Jan Heynslaan - €1,950 per month
+2025-03-01 14:02:20,714 - app.scraper.utils - INFO - Found new listing: Flat De Remise - €1,085 per month
+2025-03-01 14:02:20,766 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,875 per month
+2025-03-01 14:02:20,850 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,695 per month
+2025-03-01 14:02:20,911 - app.scraper.utils - INFO - Found new listing: Flat Leenderweg - €1,850 per month
+2025-03-01 14:02:20,961 - app.scraper.utils - INFO - Found new listing: House Graslinnen - €1,800 per month
+2025-03-01 14:02:21,017 - app.scraper.utils - INFO - Found new listing: Flat Begoniastraat - €1,850 per month
+2025-03-01 14:02:21,088 - app.scraper.utils - INFO - Found new listing: Flat Meerring 113 - €1,645 per month
+2025-03-01 14:02:21,164 - app.scraper.utils - INFO - Found new listing: Flat Meergras 13 - €1,630 per month
+2025-03-01 14:02:21,205 - app.scraper.utils - INFO - Found new listing: Flat Amundsenlaan - €1,975 per month
+2025-03-01 14:02:21,246 - app.scraper.utils - INFO - Found new listing: Flat Hortensiastraat - €1,845 per month
+2025-03-01 14:02:21,313 - app.scraper.utils - INFO - Found new listing: House Grasveld - €1,895 per month
+2025-03-01 14:02:21,356 - app.scraper.utils - INFO - Found new listing: Flat Paradijslaan - €1,875 per month
+2025-03-01 14:02:21,411 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €1,795 per month
+2025-03-01 14:02:21,412 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/decce4bd/schouwbroekseweg already exists in database.
+2025-03-01 14:02:21,413 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:21,413 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/45b8260b/ravensdonk already exists in database.
+2025-03-01 14:02:21,414 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/65af8674/jacobus-deckersstraat already exists in database.
+2025-03-01 14:02:21,415 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ac072bf9/gagelstraat already exists in database.
+2025-03-01 14:02:21,415 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/138224f5/havensingel already exists in database.
+2025-03-01 14:02:21,416 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/81e2e80a/hemelrijken already exists in database.
+2025-03-01 14:02:21,417 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ea3bcc80/grote-berg already exists in database.
+2025-03-01 14:02:21,418 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/c265c794/gestelsestraat already exists in database.
+2025-03-01 14:02:21,419 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/051bdb55/stratumsedijk already exists in database.
+2025-03-01 14:02:21,419 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/275aff2a/volderhof already exists in database.
+2025-03-01 14:02:21,420 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/2c1ca438/schoonhoeve already exists in database.
+2025-03-01 14:02:21,421 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/9fa2cae7/kees-de-beverpad already exists in database.
+2025-03-01 14:02:21,422 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6a055279/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:21,422 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/e4e4730c/stationsweg already exists in database.
+2025-03-01 14:02:21,423 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/75fcdb1a/meergras already exists in database.
+2025-03-01 14:02:21,424 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/79b056bb/st-adrianusstraat already exists in database.
+2025-03-01 14:02:21,424 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/eaed399c/jan-heynslaan already exists in database.
+2025-03-01 14:02:21,425 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ffaeaf6d/de-remise already exists in database.
+2025-03-01 14:02:21,426 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6857734e/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:21,427 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/5d815b77/gestelsestraat already exists in database.
+2025-03-01 14:02:21,427 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/cf78da38/leenderweg already exists in database.
+2025-03-01 14:02:21,428 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/dbdaa3c7/graslinnen already exists in database.
+2025-03-01 14:02:21,429 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/14c4dc97/begoniastraat already exists in database.
+2025-03-01 14:02:21,429 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/04934eec/meerring already exists in database.
+2025-03-01 14:02:21,430 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6148b9a8/meergras already exists in database.
+2025-03-01 14:02:21,431 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/8398a24e/amundsenlaan already exists in database.
+2025-03-01 14:02:21,431 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/fd44df39/hortensiastraat already exists in database.
+2025-03-01 14:02:21,432 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/a1c48c6f/grasveld already exists in database.
+2025-03-01 14:02:21,432 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/dd6fd37b/paradijslaan already exists in database.
+2025-03-01 14:02:21,433 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/d49f19c7/pastoor-van-arsplein already exists in database.
+2025-03-01 14:02:21,433 - app.scraper.utils - INFO - No new listings found for subscription 2
+2025-03-01 14:02:23,072 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:24,070 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:27,150 - app.scraper.utils - INFO - Running scraper for subscription 3 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:02:28,123 - app.scraper.utils - INFO - Running scraper for subscription 3 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:02:29,635 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:29,635 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:31,797 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:33,017 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:33,162 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:02:33,265 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:33,421 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:02:33,505 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:02:33,573 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:02:33,672 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:02:33,778 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:02:33,862 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:02:33,929 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:02:33,989 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:02:34,061 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:02:34,128 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:02:34,191 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:02:34,276 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:02:34,351 - app.scraper.utils - INFO - Found new listing: Flat Stationsweg - €1,850 per month
+2025-03-01 14:02:34,415 - app.scraper.utils - INFO - Found new listing: Flat Meergras 27 - €1,630 per month
+2025-03-01 14:02:34,475 - app.scraper.utils - INFO - Found new listing: Flat St Adrianusstraat - €1,675 per month
+2025-03-01 14:02:34,531 - app.scraper.utils - INFO - Found new listing: House Jan Heynslaan - €1,950 per month
+2025-03-01 14:02:34,577 - app.scraper.utils - INFO - Found new listing: Flat De Remise - €1,085 per month
+2025-03-01 14:02:34,593 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:34,614 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:34,635 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,875 per month
+2025-03-01 14:02:34,700 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,695 per month
+2025-03-01 14:02:34,769 - app.scraper.utils - INFO - Found new listing: Flat Leenderweg - €1,850 per month
+2025-03-01 14:02:34,817 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:02:34,838 - app.scraper.utils - INFO - Found new listing: House Graslinnen - €1,800 per month
+2025-03-01 14:02:34,881 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:34,895 - app.scraper.utils - INFO - Found new listing: Flat Begoniastraat - €1,850 per month
+2025-03-01 14:02:34,932 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:02:34,944 - app.scraper.utils - INFO - Found new listing: Flat Meerring 113 - €1,645 per month
+2025-03-01 14:02:34,986 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:02:34,999 - app.scraper.utils - INFO - Found new listing: Flat Meergras 13 - €1,630 per month
+2025-03-01 14:02:35,060 - app.scraper.utils - INFO - Found new listing: Flat Amundsenlaan - €1,975 per month
+2025-03-01 14:02:35,118 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:02:35,121 - app.scraper.utils - INFO - Found new listing: Flat Hortensiastraat - €1,845 per month
+2025-03-01 14:02:35,164 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:02:35,165 - app.scraper.utils - INFO - Found new listing: House Grasveld - €1,895 per month
+2025-03-01 14:02:35,206 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:02:35,206 - app.scraper.utils - INFO - Found new listing: Flat Paradijslaan - €1,875 per month
+2025-03-01 14:02:35,249 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:02:35,249 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €1,795 per month
+2025-03-01 14:02:35,250 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/decce4bd/schouwbroekseweg already exists in database.
+2025-03-01 14:02:35,251 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:35,252 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/45b8260b/ravensdonk already exists in database.
+2025-03-01 14:02:35,252 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/65af8674/jacobus-deckersstraat already exists in database.
+2025-03-01 14:02:35,253 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ac072bf9/gagelstraat already exists in database.
+2025-03-01 14:02:35,254 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/138224f5/havensingel already exists in database.
+2025-03-01 14:02:35,254 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/81e2e80a/hemelrijken already exists in database.
+2025-03-01 14:02:35,255 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ea3bcc80/grote-berg already exists in database.
+2025-03-01 14:02:35,255 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/c265c794/gestelsestraat already exists in database.
+2025-03-01 14:02:35,256 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/051bdb55/stratumsedijk already exists in database.
+2025-03-01 14:02:35,257 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/275aff2a/volderhof already exists in database.
+2025-03-01 14:02:35,257 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/2c1ca438/schoonhoeve already exists in database.
+2025-03-01 14:02:35,258 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/9fa2cae7/kees-de-beverpad already exists in database.
+2025-03-01 14:02:35,258 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6a055279/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:35,259 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/e4e4730c/stationsweg already exists in database.
+2025-03-01 14:02:35,260 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/75fcdb1a/meergras already exists in database.
+2025-03-01 14:02:35,260 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/79b056bb/st-adrianusstraat already exists in database.
+2025-03-01 14:02:35,261 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/eaed399c/jan-heynslaan already exists in database.
+2025-03-01 14:02:35,262 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ffaeaf6d/de-remise already exists in database.
+2025-03-01 14:02:35,262 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6857734e/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:35,263 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/5d815b77/gestelsestraat already exists in database.
+2025-03-01 14:02:35,264 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/cf78da38/leenderweg already exists in database.
+2025-03-01 14:02:35,264 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/dbdaa3c7/graslinnen already exists in database.
+2025-03-01 14:02:35,265 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/14c4dc97/begoniastraat already exists in database.
+2025-03-01 14:02:35,265 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/04934eec/meerring already exists in database.
+2025-03-01 14:02:35,266 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6148b9a8/meergras already exists in database.
+2025-03-01 14:02:35,267 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/8398a24e/amundsenlaan already exists in database.
+2025-03-01 14:02:35,267 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/fd44df39/hortensiastraat already exists in database.
+2025-03-01 14:02:35,268 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/a1c48c6f/grasveld already exists in database.
+2025-03-01 14:02:35,268 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/dd6fd37b/paradijslaan already exists in database.
+2025-03-01 14:02:35,269 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/d49f19c7/pastoor-van-arsplein already exists in database.
+2025-03-01 14:02:35,269 - app.scraper.utils - INFO - No new listings found for subscription 3
+2025-03-01 14:02:35,304 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:02:35,372 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:02:35,433 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:02:35,522 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:02:35,582 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:02:35,625 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:02:35,667 - app.scraper.utils - INFO - Found new listing: Flat Stationsweg - €1,850 per month
+2025-03-01 14:02:35,708 - app.scraper.utils - INFO - Found new listing: Flat Meergras 27 - €1,630 per month
+2025-03-01 14:02:35,750 - app.scraper.utils - INFO - Found new listing: Flat St Adrianusstraat - €1,675 per month
+2025-03-01 14:02:35,814 - app.scraper.utils - INFO - Found new listing: House Jan Heynslaan - €1,950 per month
+2025-03-01 14:02:35,868 - app.scraper.utils - INFO - Found new listing: Flat De Remise - €1,085 per month
+2025-03-01 14:02:35,913 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,875 per month
+2025-03-01 14:02:35,955 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,695 per month
+2025-03-01 14:02:35,998 - app.scraper.utils - INFO - Found new listing: Flat Leenderweg - €1,850 per month
+2025-03-01 14:02:36,040 - app.scraper.utils - INFO - Found new listing: House Graslinnen - €1,800 per month
+2025-03-01 14:02:36,085 - app.scraper.utils - INFO - Found new listing: Flat Begoniastraat - €1,850 per month
+2025-03-01 14:02:36,128 - app.scraper.utils - INFO - Found new listing: Flat Meerring 113 - €1,645 per month
+2025-03-01 14:02:36,174 - app.scraper.utils - INFO - Found new listing: Flat Meergras 13 - €1,630 per month
+2025-03-01 14:02:36,217 - app.scraper.utils - INFO - Found new listing: Flat Amundsenlaan - €1,975 per month
+2025-03-01 14:02:36,261 - app.scraper.utils - INFO - Found new listing: Flat Hortensiastraat - €1,845 per month
+2025-03-01 14:02:36,303 - app.scraper.utils - INFO - Found new listing: House Grasveld - €1,895 per month
+2025-03-01 14:02:36,346 - app.scraper.utils - INFO - Found new listing: Flat Paradijslaan - €1,875 per month
+2025-03-01 14:02:36,387 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €1,795 per month
+2025-03-01 14:02:36,388 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/decce4bd/schouwbroekseweg already exists in database.
+2025-03-01 14:02:36,389 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:36,390 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/45b8260b/ravensdonk already exists in database.
+2025-03-01 14:02:36,390 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/65af8674/jacobus-deckersstraat already exists in database.
+2025-03-01 14:02:36,391 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ac072bf9/gagelstraat already exists in database.
+2025-03-01 14:02:36,392 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/138224f5/havensingel already exists in database.
+2025-03-01 14:02:36,392 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/81e2e80a/hemelrijken already exists in database.
+2025-03-01 14:02:36,393 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ea3bcc80/grote-berg already exists in database.
+2025-03-01 14:02:36,393 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/c265c794/gestelsestraat already exists in database.
+2025-03-01 14:02:36,394 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/051bdb55/stratumsedijk already exists in database.
+2025-03-01 14:02:36,395 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/275aff2a/volderhof already exists in database.
+2025-03-01 14:02:36,395 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/2c1ca438/schoonhoeve already exists in database.
+2025-03-01 14:02:36,396 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/9fa2cae7/kees-de-beverpad already exists in database.
+2025-03-01 14:02:36,396 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6a055279/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:36,397 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/e4e4730c/stationsweg already exists in database.
+2025-03-01 14:02:36,398 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/75fcdb1a/meergras already exists in database.
+2025-03-01 14:02:36,398 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/79b056bb/st-adrianusstraat already exists in database.
+2025-03-01 14:02:36,399 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/eaed399c/jan-heynslaan already exists in database.
+2025-03-01 14:02:36,400 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ffaeaf6d/de-remise already exists in database.
+2025-03-01 14:02:36,400 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6857734e/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:36,401 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/5d815b77/gestelsestraat already exists in database.
+2025-03-01 14:02:36,401 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/cf78da38/leenderweg already exists in database.
+2025-03-01 14:02:36,402 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/dbdaa3c7/graslinnen already exists in database.
+2025-03-01 14:02:36,403 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/14c4dc97/begoniastraat already exists in database.
+2025-03-01 14:02:36,403 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/04934eec/meerring already exists in database.
+2025-03-01 14:02:36,404 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6148b9a8/meergras already exists in database.
+2025-03-01 14:02:36,405 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/8398a24e/amundsenlaan already exists in database.
+2025-03-01 14:02:36,405 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/fd44df39/hortensiastraat already exists in database.
+2025-03-01 14:02:36,406 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/a1c48c6f/grasveld already exists in database.
+2025-03-01 14:02:36,407 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/dd6fd37b/paradijslaan already exists in database.
+2025-03-01 14:02:36,407 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/d49f19c7/pastoor-van-arsplein already exists in database.
+2025-03-01 14:02:36,408 - app.scraper.utils - INFO - No new listings found for subscription 3
+2025-03-01 14:02:37,880 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:38,629 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:41,933 - app.scraper.utils - INFO - Running scraper for subscription 5 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:02:42,699 - app.scraper.utils - INFO - Running scraper for subscription 5 (https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms)
+2025-03-01 14:02:44,431 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:44,431 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-01 14:02:47,134 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:47,157 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:47,341 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:02:47,474 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:47,534 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:02:47,583 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:02:47,626 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:02:47,745 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:02:47,805 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:02:47,877 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:02:47,937 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:02:48,003 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:02:48,089 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:02:48,210 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:02:48,310 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:02:48,422 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:02:48,482 - app.scraper.utils - INFO - Found new listing: Flat Stationsweg - €1,850 per month
+2025-03-01 14:02:48,547 - app.scraper.utils - INFO - Found new listing: Flat Meergras 27 - €1,630 per month
+2025-03-01 14:02:48,626 - app.scraper.utils - INFO - Found new listing: Flat St Adrianusstraat - €1,675 per month
+2025-03-01 14:02:48,722 - app.scraper.utils - INFO - Found new listing: House Jan Heynslaan - €1,950 per month
+2025-03-01 14:02:48,791 - app.scraper.utils - INFO - Found new listing: Flat De Remise - €1,085 per month
+2025-03-01 14:02:48,863 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,875 per month
+2025-03-01 14:02:48,970 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,695 per month
+2025-03-01 14:02:49,079 - app.scraper.utils - INFO - Found new listing: Flat Leenderweg - €1,850 per month
+2025-03-01 14:02:49,169 - app.scraper.utils - INFO - Found new listing: House Graslinnen - €1,800 per month
+2025-03-01 14:02:49,232 - app.scraper.utils - INFO - Found new listing: Flat Begoniastraat - €1,850 per month
+2025-03-01 14:02:49,280 - app.scraper.utils - INFO - Found new listing: Flat Meerring 113 - €1,645 per month
+2025-03-01 14:02:49,327 - app.scraper.utils - INFO - Found new listing: Flat Meergras 13 - €1,630 per month
+2025-03-01 14:02:49,375 - app.scraper.utils - INFO - Found new listing: Flat Amundsenlaan - €1,975 per month
+2025-03-01 14:02:49,395 - app.scraper.utils - INFO - Navigated to https://www.pararius.com/apartments/eindhoven/0-2000/2-bedrooms
+2025-03-01 14:02:49,423 - app.scraper.utils - INFO - Found 31 total listings
+2025-03-01 14:02:49,458 - app.scraper.utils - INFO - Found new listing: Flat Hortensiastraat - €1,845 per month
+2025-03-01 14:02:49,527 - app.scraper.utils - INFO - Found new listing: House Grasveld - €1,895 per month
+2025-03-01 14:02:49,591 - app.scraper.utils - INFO - Found new listing: Flat Paradijslaan - €1,875 per month
+2025-03-01 14:02:49,611 - app.scraper.utils - INFO - Found new listing: Flat Schouwbroekseweg - €1,950 per month
+2025-03-01 14:02:49,653 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €1,795 per month
+2025-03-01 14:02:49,654 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/decce4bd/schouwbroekseweg already exists in database.
+2025-03-01 14:02:49,655 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:49,656 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/45b8260b/ravensdonk already exists in database.
+2025-03-01 14:02:49,658 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/65af8674/jacobus-deckersstraat already exists in database.
+2025-03-01 14:02:49,659 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ac072bf9/gagelstraat already exists in database.
+2025-03-01 14:02:49,659 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/138224f5/havensingel already exists in database.
+2025-03-01 14:02:49,660 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/81e2e80a/hemelrijken already exists in database.
+2025-03-01 14:02:49,661 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ea3bcc80/grote-berg already exists in database.
+2025-03-01 14:02:49,662 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/c265c794/gestelsestraat already exists in database.
+2025-03-01 14:02:49,663 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/051bdb55/stratumsedijk already exists in database.
+2025-03-01 14:02:49,664 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/275aff2a/volderhof already exists in database.
+2025-03-01 14:02:49,665 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/2c1ca438/schoonhoeve already exists in database.
+2025-03-01 14:02:49,666 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/9fa2cae7/kees-de-beverpad already exists in database.
+2025-03-01 14:02:49,667 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6a055279/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:49,668 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/e4e4730c/stationsweg already exists in database.
+2025-03-01 14:02:49,669 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/75fcdb1a/meergras already exists in database.
+2025-03-01 14:02:49,670 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/79b056bb/st-adrianusstraat already exists in database.
+2025-03-01 14:02:49,671 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/eaed399c/jan-heynslaan already exists in database.
+2025-03-01 14:02:49,672 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ffaeaf6d/de-remise already exists in database.
+2025-03-01 14:02:49,673 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6857734e/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:49,675 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/5d815b77/gestelsestraat already exists in database.
+2025-03-01 14:02:49,676 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/cf78da38/leenderweg already exists in database.
+2025-03-01 14:02:49,677 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/dbdaa3c7/graslinnen already exists in database.
+2025-03-01 14:02:49,678 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/14c4dc97/begoniastraat already exists in database.
+2025-03-01 14:02:49,679 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/04934eec/meerring already exists in database.
+2025-03-01 14:02:49,680 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6148b9a8/meergras already exists in database.
+2025-03-01 14:02:49,681 - app.scraper.utils - INFO - Found new listing: House Gerard Bromlaan - €1,795 per month
+2025-03-01 14:02:49,681 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/8398a24e/amundsenlaan already exists in database.
+2025-03-01 14:02:49,682 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/fd44df39/hortensiastraat already exists in database.
+2025-03-01 14:02:49,683 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/a1c48c6f/grasveld already exists in database.
+2025-03-01 14:02:49,684 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/dd6fd37b/paradijslaan already exists in database.
+2025-03-01 14:02:49,684 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/d49f19c7/pastoor-van-arsplein already exists in database.
+2025-03-01 14:02:49,685 - app.scraper.utils - INFO - No new listings found for subscription 5
+2025-03-01 14:02:49,838 - app.scraper.utils - INFO - Found new listing: House Ravensdonk - €1,995 per month
+2025-03-01 14:02:49,935 - app.scraper.utils - INFO - Found new listing: House Jacobus Deckersstraat - €1,975 per month
+2025-03-01 14:02:49,995 - app.scraper.utils - INFO - Found new listing: Flat Gagelstraat - €1,900 per month
+2025-03-01 14:02:50,038 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,950 per month
+2025-03-01 14:02:50,081 - app.scraper.utils - INFO - Found new listing: House Hemelrijken - €1,550 per month
+2025-03-01 14:02:50,138 - app.scraper.utils - INFO - Found new listing: Flat Grote Berg 81 E - €1,995 per month
+2025-03-01 14:02:50,186 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,325 per month
+2025-03-01 14:02:50,228 - app.scraper.utils - INFO - Found new listing: Flat Stratumsedijk - €1,875 per month
+2025-03-01 14:02:50,298 - app.scraper.utils - INFO - Found new listing: Flat Volderhof - €1,450 per month
+2025-03-01 14:02:50,396 - app.scraper.utils - INFO - Found new listing: Flat Schoonhoeve - €1,525 per month
+2025-03-01 14:02:50,469 - app.scraper.utils - INFO - Found new listing: House Kees de Beverpad - €1,800 per month
+2025-03-01 14:02:50,511 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,900 per month
+2025-03-01 14:02:50,603 - app.scraper.utils - INFO - Found new listing: Flat Stationsweg - €1,850 per month
+2025-03-01 14:02:50,647 - app.scraper.utils - INFO - Found new listing: Flat Meergras 27 - €1,630 per month
+2025-03-01 14:02:50,761 - app.scraper.utils - INFO - Found new listing: Flat St Adrianusstraat - €1,675 per month
+2025-03-01 14:02:50,828 - app.scraper.utils - INFO - Found new listing: House Jan Heynslaan - €1,950 per month
+2025-03-01 14:02:50,897 - app.scraper.utils - INFO - Found new listing: Flat De Remise - €1,085 per month
+2025-03-01 14:02:50,987 - app.scraper.utils - INFO - Found new listing: Flat Deken van Somerenstraat - €1,875 per month
+2025-03-01 14:02:51,078 - app.scraper.utils - INFO - Found new listing: Flat Gestelsestraat - €1,695 per month
+2025-03-01 14:02:51,156 - app.scraper.utils - INFO - Found new listing: Flat Leenderweg - €1,850 per month
+2025-03-01 14:02:51,213 - app.scraper.utils - INFO - Found new listing: House Graslinnen - €1,800 per month
+2025-03-01 14:02:51,264 - app.scraper.utils - INFO - Found new listing: Flat Begoniastraat - €1,850 per month
+2025-03-01 14:02:51,309 - app.scraper.utils - INFO - Found new listing: Flat Meerring 113 - €1,645 per month
+2025-03-01 14:02:51,349 - app.scraper.utils - INFO - Found new listing: Flat Meergras 13 - €1,630 per month
+2025-03-01 14:02:51,390 - app.scraper.utils - INFO - Found new listing: Flat Amundsenlaan - €1,975 per month
+2025-03-01 14:02:51,432 - app.scraper.utils - INFO - Found new listing: Flat Hortensiastraat - €1,845 per month
+2025-03-01 14:02:51,472 - app.scraper.utils - INFO - Found new listing: House Grasveld - €1,895 per month
+2025-03-01 14:02:51,513 - app.scraper.utils - INFO - Found new listing: Flat Paradijslaan - €1,875 per month
+2025-03-01 14:02:51,554 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €1,795 per month
+2025-03-01 14:02:51,555 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/decce4bd/schouwbroekseweg already exists in database.
+2025-03-01 14:02:51,556 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/75510219/gerard-bromlaan already exists in database.
+2025-03-01 14:02:51,556 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/45b8260b/ravensdonk already exists in database.
+2025-03-01 14:02:51,557 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/65af8674/jacobus-deckersstraat already exists in database.
+2025-03-01 14:02:51,558 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ac072bf9/gagelstraat already exists in database.
+2025-03-01 14:02:51,558 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/138224f5/havensingel already exists in database.
+2025-03-01 14:02:51,559 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/81e2e80a/hemelrijken already exists in database.
+2025-03-01 14:02:51,560 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ea3bcc80/grote-berg already exists in database.
+2025-03-01 14:02:51,560 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/c265c794/gestelsestraat already exists in database.
+2025-03-01 14:02:51,561 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/051bdb55/stratumsedijk already exists in database.
+2025-03-01 14:02:51,562 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/275aff2a/volderhof already exists in database.
+2025-03-01 14:02:51,562 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/2c1ca438/schoonhoeve already exists in database.
+2025-03-01 14:02:51,563 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/9fa2cae7/kees-de-beverpad already exists in database.
+2025-03-01 14:02:51,564 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6a055279/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:51,565 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/e4e4730c/stationsweg already exists in database.
+2025-03-01 14:02:51,565 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/75fcdb1a/meergras already exists in database.
+2025-03-01 14:02:51,566 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/79b056bb/st-adrianusstraat already exists in database.
+2025-03-01 14:02:51,567 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/eaed399c/jan-heynslaan already exists in database.
+2025-03-01 14:02:51,567 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/ffaeaf6d/de-remise already exists in database.
+2025-03-01 14:02:51,568 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6857734e/deken-van-somerenstraat already exists in database.
+2025-03-01 14:02:51,569 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/5d815b77/gestelsestraat already exists in database.
+2025-03-01 14:02:51,570 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/cf78da38/leenderweg already exists in database.
+2025-03-01 14:02:51,570 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/dbdaa3c7/graslinnen already exists in database.
+2025-03-01 14:02:51,571 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/14c4dc97/begoniastraat already exists in database.
+2025-03-01 14:02:51,571 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/04934eec/meerring already exists in database.
+2025-03-01 14:02:51,572 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/6148b9a8/meergras already exists in database.
+2025-03-01 14:02:51,572 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/8398a24e/amundsenlaan already exists in database.
+2025-03-01 14:02:51,573 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/fd44df39/hortensiastraat already exists in database.
+2025-03-01 14:02:51,573 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/house-for-rent/eindhoven/a1c48c6f/grasveld already exists in database.
+2025-03-01 14:02:51,574 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/dd6fd37b/paradijslaan already exists in database.
+2025-03-01 14:02:51,575 - app.scraper.utils - INFO - Listing with URL https://www.pararius.com/apartment-for-rent/eindhoven/d49f19c7/pastoor-van-arsplein already exists in database.
+2025-03-01 14:02:51,575 - app.scraper.utils - INFO - No new listings found for subscription 5
+2025-03-01 14:02:52,292 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:54,195 - app.scraper.utils - INFO - WebDriver closed
+2025-03-01 14:02:56,361 - app.tasks - INFO - Finished checking all active subscriptions. Success: 4/4
+2025-03-01 14:02:56,362 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:06:56 CET)" executed successfully
+2025-03-01 14:02:58,278 - app.tasks - INFO - Finished checking all active subscriptions. Success: 4/4
+2025-03-01 14:02:58,279 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-01 14:06:57 CET)" executed successfully
+2025-03-01 14:03:28,222 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 14:03:28] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 14:06:25,565 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 14:06:25,756 - apscheduler.scheduler - INFO - Scheduler has been shut down

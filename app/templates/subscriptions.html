@@ -67,6 +67,7 @@
                                         {% if sub.active %}
                                             <a href="{{ url_for('main.unsubscribe', sub_id=sub.id) }}" class="btn btn-sm btn-outline-danger">Unsubscribe</a>
                                             <a href="{{ url_for('main.test_scraper', sub_id=sub.id) }}" class="btn btn-sm btn-outline-primary ms-1">Test Now</a>
+                                            <a href="{{ url_for('main.test_email', sub_id=sub.id) }}?email={{ email }}" class="btn btn-sm btn-outline-info ms-1">Test Email</a>
                                         {% else %}
                                             <a href="{{ url_for('main.reactivate', sub_id=sub.id) }}" class="btn btn-sm btn-outline-success">Reactivate</a>
                                         {% endif %}

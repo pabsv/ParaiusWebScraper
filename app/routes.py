@@ -98,3 +98,15 @@ def test_scraper(sub_id):
         flash('Failed to run the scraper.', 'danger')
     
     return redirect(url_for('main.subscriptions'))
+
+@main_bp.route('/test_email/<int:sub_id>')
+def test_email(sub_id):
+    from app.scraper.utils import test_email_notification
+    result = test_email_notification(sub_id)
+    
+    if result:
+        flash('Test email sent successfully! Check your inbox.', 'success')
+    else:
+        flash('Failed to send test email. Check the logs for more information.', 'danger')
+    
+    return redirect(url_for('main.subscriptions', email=request.args.get('email', '')))

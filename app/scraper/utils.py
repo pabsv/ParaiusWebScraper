@@ -18,9 +18,19 @@ logger = logging.getLogger(__name__)
 
 def send_email_notification(user_email, new_listings):
     """Send email notification about new listings."""
+    if not new_listings:
+        logger.warning(f"No new listings to send to {user_email}")
+        return False
+        
+    logger.info(f"Preparing email with {len(new_listings)} new listings for {user_email}")
+    
     config = current_app.config
     sender = config.get('MAIL_USERNAME')
     password = config.get('MAIL_PASSWORD')
+    
+    if not sender or not password:
+        logger.error("Email credentials not configured properly")
+        return False
     
     msg = MIMEMultipart('alternative')
     msg['From'] = sender
@@ -155,7 +165,6 @@ def send_email_notification(user_email, new_listings):
     except Exception as e:
         logger.error(f"Failed to send email: {str(e)}")
         return False
-
 def run_spider_for_subscription(subscription_id):
     """Run spider for a specific subscription using direct Selenium approach without Scrapy."""
     try:
@@ -297,3 +306,35 @@ def run_manual_check(subscription_id):
     """Run a manual check for a specific subscription."""
     logger.info(f"Running manual check for subscription {subscription_id}")
     return run_spider_for_subscription(subscription_id)
+
+
+#Test notificaitons without adding stuff to the database
+
+def test_email_notification(subscription_id):
+    """Create a test listing and send a test email notification."""
+    try:
+        subscription = Subscription.query.get(subscription_id)
+        if not subscription or not subscription.active:
+            logger.info(f"Subscription {subscription_id} is not active or does not exist.")
+            return False
+            
+        user_email = subscription.user.email
+        
+        # Create a test listing that won't be saved to the database
+        test_listing = Listing(
+            title="TEST LISTING - Please ignore",
+            price="€1,500 per month",
+            url="https://www.pararius.com/test-listing",
+            address="Test Street 123, Eindhoven",
+            specs="80m², 2 rooms, 1 bathroom",
+            date_found=datetime.now(),
+            subscription_id=subscription.id
+        )
+        
+        # Send test email with just this one listing
+        result = send_email_notification(user_email, [test_listing])
+        
+        return result
+    except Exception as e:
+        logger.error(f"Error in test_email_notification: {str(e)}")
+        return False
