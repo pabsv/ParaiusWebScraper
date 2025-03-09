@@ -934,3 +934,919 @@ urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(1
 2025-03-01 18:26:49,485 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:26:49] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
 2025-03-01 18:26:49,488 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:26:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-03-01 18:27:15,365 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 18:28:40,065 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 18:28:40,092 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 18:28:40,093 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 18:28:40,098 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 18:28:40,107 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 18:28:40,129 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 18:28:40,131 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 18:28:41,841 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:41] "GET / HTTP/1.1" 200 -
+2025-03-01 18:28:42,018 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:42] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:28:42,019 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:28:45,630 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:45] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 18:28:45,681 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:45] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:28:45,683 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:28:47,041 - app.scraper.utils - INFO - Preparing email with 1 new listings for pablovegarzv2@gmail.com
+2025-03-01 18:28:49,529 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-01 18:28:49,535 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:49] "[32mGET /test_email/1?email=pablovegarzv2@gmail.com HTTP/1.1[0m" 302 -
+2025-03-01 18:28:49,565 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:49] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-01 18:28:49,609 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:49] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:28:49,612 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:28:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:29:14,945 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-01 18:30:00,560 - app.tasks - INFO - Setting up scheduler...
+2025-03-01 18:30:00,588 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-01 18:30:00,589 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-01 18:30:00,594 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-01 18:30:00,594 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-01 18:30:00,614 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-01 18:30:00,615 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 18:30:01,772 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:30:01] "GET / HTTP/1.1" 200 -
+2025-03-01 18:30:01,912 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:30:01] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:30:01,913 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:30:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:31:21,692 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:21] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-01 18:31:21,708 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:21] "GET / HTTP/1.1" 200 -
+2025-03-01 18:31:21,800 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:21] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:31:21,801 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:31:25,529 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:25] "GET /subscriptions?email=eric.laval%40icloud.com HTTP/1.1" 200 -
+2025-03-01 18:31:25,605 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:25] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:31:25,607 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:31:26,788 - app.scraper.utils - INFO - Preparing email with 1 new listings for eric.laval@icloud.com
+2025-03-01 18:31:29,151 - app.scraper.utils - INFO - Email notification sent successfully to eric.laval@icloud.com!
+2025-03-01 18:31:29,153 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:29] "[32mGET /test_email/2?email=eric.laval@icloud.com HTTP/1.1[0m" 302 -
+2025-03-01 18:31:29,166 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:29] "GET /subscriptions?email=eric.laval%40icloud.com HTTP/1.1" 200 -
+2025-03-01 18:31:29,207 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:29] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:31:29,208 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:31:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:32:03,645 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:03] "[32mGET /unsubscribe/2 HTTP/1.1[0m" 302 -
+2025-03-01 18:32:03,668 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:03] "GET /subscriptions?email=eric.laval%40icloud.com HTTP/1.1" 200 -
+2025-03-01 18:32:03,701 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:03] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:32:03,702 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:32:09,216 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:09] "GET / HTTP/1.1" 200 -
+2025-03-01 18:32:09,287 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:09] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-01 18:32:09,288 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2025 18:32:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-01 18:32:20,464 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-08 12:52:19,913 - app.tasks - INFO - Setting up scheduler...
+2025-03-08 12:52:19,995 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-08 12:52:19,996 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-08 12:52:19,998 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-08 12:52:19,999 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-08 12:52:20,023 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-08 12:52:20,023 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 12:52:20,026 - werkzeug - INFO -  * Restarting with stat
+2025-03-08 12:52:21,082 - app.tasks - INFO - Setting up scheduler...
+2025-03-08 12:52:21,099 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-08 12:52:21,099 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-08 12:52:21,101 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-08 12:52:21,101 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-08 12:52:21,110 - werkzeug - WARNING -  * Debugger is active!
+2025-03-08 12:52:21,113 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-08 12:52:23,302 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 12:52:23] "GET / HTTP/1.1" 200 -
+2025-03-08 12:52:23,418 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 12:52:23] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-08 12:52:23,438 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 12:52:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 12:52:23,841 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 12:52:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-08 12:57:19,998 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:02:19 CET)" (scheduled at 2025-03-08 12:57:19.995717+01:00)
+2025-03-08 12:57:19,999 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 12:57:19,999 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 12:57:20,000 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 12:57:21,109 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:02:21 CET)" (scheduled at 2025-03-08 12:57:21.099357+01:00)
+2025-03-08 12:57:21,109 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 12:57:21,110 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 12:57:21,110 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 12:57:23,436 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 12:57:23,436 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 12:57:23,467 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-08 12:57:23,467 - app.scraper.utils - INFO - Found 31 existing listings in database
+2025-03-08 12:57:23,467 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 12:57:23,468 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 12:57:26,412 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 12:57:26,582 - app.scraper.utils - INFO - Found new listing: Flat Mignot en De Blockplein - €2,250 per month
+2025-03-08 12:57:26,643 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,495 per month
+2025-03-08 12:57:26,688 - app.scraper.utils - INFO - Found new listing: House Ravensdonk 41 - €2,150 per month
+2025-03-08 12:57:26,730 - app.scraper.utils - INFO - Found new listing: Room Reinkenstraat - €545 per month
+2025-03-08 12:57:26,776 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €790 per month
+2025-03-08 12:57:26,818 - app.scraper.utils - INFO - Found new listing: House St Jorislaan - €2,475 per month
+2025-03-08 12:57:26,861 - app.scraper.utils - INFO - Found new listing: House Busweg - €1,825 per month
+2025-03-08 12:57:26,908 - app.scraper.utils - INFO - Found new listing: House Bosfazant - €2,295 per month
+2025-03-08 12:57:26,959 - app.scraper.utils - INFO - Found new listing: Room Koenraadlaan - €730 per month
+2025-03-08 12:57:27,086 - app.scraper.utils - INFO - Found new listing: House Langdonkenstraat 7 A - €2,995 per month
+2025-03-08 12:57:27,144 - app.scraper.utils - INFO - Found new listing: House Falstaff - €2,150 per month
+2025-03-08 12:57:27,194 - app.scraper.utils - INFO - Found new listing: Flat Julianastraat - €1,050 per month
+2025-03-08 12:57:27,235 - app.scraper.utils - INFO - Found new listing: Room Schouwbroekseweg - €714 per month
+2025-03-08 12:57:27,331 - app.scraper.utils - INFO - Found new listing: Room Kampakker - €475 per month
+2025-03-08 12:57:27,368 - app.scraper.utils - INFO - Found new listing: Flat Aalsterweg - €1,295 per month
+2025-03-08 12:57:27,404 - app.scraper.utils - INFO - Found new listing: Flat Vrijstraat - €1,930 per month
+2025-03-08 12:57:27,440 - app.scraper.utils - INFO - Found new listing: House Fagotstraat 27 - €1,500 per month
+2025-03-08 12:57:27,476 - app.scraper.utils - INFO - Found new listing: House Waterfront - €2,200 per month
+2025-03-08 12:57:27,511 - app.scraper.utils - INFO - Found new listing: Studio Boutenslaan - €900 per month
+2025-03-08 12:57:27,546 - app.scraper.utils - INFO - Found new listing: Flat Boutenslaan - €1,080 per month
+2025-03-08 12:57:27,581 - app.scraper.utils - INFO - Found new listing: Flat Meerring 187 - €1,905 per month
+2025-03-08 12:57:27,619 - app.scraper.utils - INFO - Found new listing: Flat Bomanshof 281 - €1,050 per month
+2025-03-08 12:57:27,657 - app.scraper.utils - INFO - Found new listing: House Dopheide - €1,795 per month
+2025-03-08 12:57:27,701 - app.scraper.utils - INFO - Found new listing: Flat Egelstraat 46 - €1,395 per month
+2025-03-08 12:57:27,752 - app.scraper.utils - INFO - Found new listing: Flat Meergras 1 - €1,375 per month
+2025-03-08 12:57:27,806 - app.scraper.utils - INFO - Found new listing: Flat Ir Kalffstraat 246 - €1,111 per month
+2025-03-08 12:57:27,852 - app.scraper.utils - INFO - Found new listing: House Ehrenstein - €1,950 per month
+2025-03-08 12:57:27,900 - app.scraper.utils - INFO - Found new listing: House Tullelaan - €1,950 per month
+2025-03-08 12:57:27,954 - app.scraper.utils - INFO - Found new listing: Flat Meergras 71 - €1,809 per month
+2025-03-08 12:57:28,009 - app.scraper.utils - INFO - Found new listing: Flat Zeelsterstraat - €950 per month
+2025-03-08 12:57:28,017 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 12:57:28,039 - app.scraper.utils - INFO - Added 30 new listings to database
+2025-03-08 12:57:28,039 - app.scraper.utils - INFO - Matching 30 new listings to subscriptions
+2025-03-08 12:57:28,042 - app.scraper.utils - INFO - Found 1 active subscriptions
+2025-03-08 12:57:28,052 - app.scraper.utils - INFO - Sending notification to pablovegarzv2@gmail.com with 23 matched listings
+2025-03-08 12:57:28,053 - app.scraper.utils - INFO - Preparing email with 23 new listings for pablovegarzv2@gmail.com
+2025-03-08 12:57:28,423 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 12:57:28,618 - app.scraper.utils - INFO - Found new listing: Flat Mignot en De Blockplein - €2,250 per month
+2025-03-08 12:57:28,668 - app.scraper.utils - INFO - Found new listing: Flat Havensingel - €1,495 per month
+2025-03-08 12:57:28,715 - app.scraper.utils - INFO - Found new listing: House Ravensdonk 41 - €2,150 per month
+2025-03-08 12:57:28,764 - app.scraper.utils - INFO - Found new listing: Room Reinkenstraat - €545 per month
+2025-03-08 12:57:28,847 - app.scraper.utils - INFO - Found new listing: Flat Pastoor van Arsplein - €790 per month
+2025-03-08 12:57:28,910 - app.scraper.utils - INFO - Found new listing: House St Jorislaan - €2,475 per month
+2025-03-08 12:57:28,963 - app.scraper.utils - INFO - Found new listing: House Busweg - €1,825 per month
+2025-03-08 12:57:29,103 - app.scraper.utils - INFO - Found new listing: House Bosfazant - €2,295 per month
+2025-03-08 12:57:29,175 - app.scraper.utils - INFO - Found new listing: Room Koenraadlaan - €730 per month
+2025-03-08 12:57:29,220 - app.scraper.utils - INFO - Found new listing: House Langdonkenstraat 7 A - €2,995 per month
+2025-03-08 12:57:29,284 - app.scraper.utils - INFO - Found new listing: House Falstaff - €2,150 per month
+2025-03-08 12:57:29,364 - app.scraper.utils - INFO - Found new listing: Flat Julianastraat - €1,050 per month
+2025-03-08 12:57:29,438 - app.scraper.utils - INFO - Found new listing: Room Schouwbroekseweg - €714 per month
+2025-03-08 12:57:29,615 - app.scraper.utils - INFO - Found new listing: Room Kampakker - €475 per month
+2025-03-08 12:57:29,682 - app.scraper.utils - INFO - Found new listing: Flat Aalsterweg - €1,295 per month
+2025-03-08 12:57:29,762 - app.scraper.utils - INFO - Found new listing: Flat Vrijstraat - €1,930 per month
+2025-03-08 12:57:29,814 - app.scraper.utils - INFO - Found new listing: House Fagotstraat 27 - €1,500 per month
+2025-03-08 12:57:29,876 - app.scraper.utils - INFO - Found new listing: House Waterfront - €2,200 per month
+2025-03-08 12:57:29,960 - app.scraper.utils - INFO - Found new listing: Studio Boutenslaan - €900 per month
+2025-03-08 12:57:30,040 - app.scraper.utils - INFO - Found new listing: Flat Boutenslaan - €1,080 per month
+2025-03-08 12:57:30,110 - app.scraper.utils - INFO - Found new listing: Flat Meerring 187 - €1,905 per month
+2025-03-08 12:57:30,194 - app.scraper.utils - INFO - Found new listing: Flat Bomanshof 281 - €1,050 per month
+2025-03-08 12:57:30,247 - app.scraper.utils - INFO - Found new listing: House Dopheide - €1,795 per month
+2025-03-08 12:57:30,303 - app.scraper.utils - INFO - Found new listing: Flat Egelstraat 46 - €1,395 per month
+2025-03-08 12:57:30,356 - app.scraper.utils - INFO - Found new listing: Flat Meergras 1 - €1,375 per month
+2025-03-08 12:57:30,442 - app.scraper.utils - INFO - Found new listing: Flat Ir Kalffstraat 246 - €1,111 per month
+2025-03-08 12:57:30,496 - app.scraper.utils - INFO - Found new listing: House Ehrenstein - €1,950 per month
+2025-03-08 12:57:30,540 - app.scraper.utils - INFO - Found new listing: House Tullelaan - €1,950 per month
+2025-03-08 12:57:30,588 - app.scraper.utils - INFO - Found new listing: Flat Meergras 71 - €1,809 per month
+2025-03-08 12:57:30,667 - app.scraper.utils - INFO - Found new listing: Flat Zeelsterstraat - €950 per month
+2025-03-08 12:57:30,685 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 12:57:30,689 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Mignot en De Blockplein', 2250, '€2,250 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/038cbfd3/mignot-en-de-blockplein', None, None, None, '', '2025-03-08 12:57:28.618675', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,690 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Havensingel', 1495, '€1,495 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/e0ed6132/havensingel', None, None, None, '', '2025-03-08 12:57:28.668585', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,692 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Ravensdonk 41', 2150, '€2,150 per month', 'https://www.pararius.com/house-for-rent/eindhoven/126ae600/ravensdonk', None, None, None, '', '2025-03-08 12:57:28.715841', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,693 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Room Reinkenstraat', 545, '€545 per month', 'https://www.pararius.com/room-for-rent/eindhoven/b9fed444/reinkenstraat', None, None, None, '', '2025-03-08 12:57:28.764639', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,694 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Pastoor van Arsplein', 790, '€790 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/0ebf0c03/pastoor-van-arsplein', None, None, None, '', '2025-03-08 12:57:28.847430', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,696 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House St Jorislaan', 2475, '€2,475 per month', 'https://www.pararius.com/house-for-rent/eindhoven/6e368690/st-jorislaan', None, None, None, '', '2025-03-08 12:57:28.910705', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,697 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Busweg', 1825, '€1,825 per month', 'https://www.pararius.com/house-for-rent/eindhoven/a824b92e/busweg', None, None, None, '', '2025-03-08 12:57:28.963321', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,698 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Bosfazant', 2295, '€2,295 per month', 'https://www.pararius.com/house-for-rent/eindhoven/84cc80c3/bosfazant', None, None, None, '', '2025-03-08 12:57:29.103034', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,699 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Room Koenraadlaan', 730, '€730 per month', 'https://www.pararius.com/room-for-rent/eindhoven/61cfaaf4/koenraadlaan', None, None, None, '', '2025-03-08 12:57:29.175928', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,701 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Langdonkenstraat 7 A', 2995, '€2,995 per month', 'https://www.pararius.com/house-for-rent/eindhoven/8d7d1746/langdonkenstraat', None, None, None, '', '2025-03-08 12:57:29.220478', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,702 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Falstaff', 2150, '€2,150 per month', 'https://www.pararius.com/house-for-rent/eindhoven/eae4d450/falstaff', None, None, None, '', '2025-03-08 12:57:29.284306', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,704 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Julianastraat', 1050, '€1,050 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/083d09e5/julianastraat', None, None, None, '', '2025-03-08 12:57:29.364347', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,705 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Room Schouwbroekseweg', 714, '€714 per month', 'https://www.pararius.com/room-for-rent/eindhoven/2352c6fb/schouwbroekseweg', None, None, None, '', '2025-03-08 12:57:29.438354', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,706 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Room Kampakker', 475, '€475 per month', 'https://www.pararius.com/room-for-rent/eindhoven/1adf76a6/kampakker', None, None, None, '', '2025-03-08 12:57:29.615714', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,707 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Aalsterweg', 1295, '€1,295 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/86ec6894/aalsterweg', None, None, None, '', '2025-03-08 12:57:29.682845', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,708 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Vrijstraat', 1930, '€1,930 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/e655356c/vrijstraat', None, None, None, '', '2025-03-08 12:57:29.762716', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,709 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Fagotstraat 27', 1500, '€1,500 per month', 'https://www.pararius.com/house-for-rent/eindhoven/f7f04407/fagotstraat', None, None, None, '', '2025-03-08 12:57:29.814870', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,711 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Waterfront', 2200, '€2,200 per month', 'https://www.pararius.com/house-for-rent/eindhoven/5ea25eba/waterfront', None, None, None, '', '2025-03-08 12:57:29.876878', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,711 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Studio Boutenslaan', 900, '€900 per month', 'https://www.pararius.com/studio-for-rent/eindhoven/edc4346a/boutenslaan', None, None, None, '', '2025-03-08 12:57:29.960060', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,712 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Boutenslaan', 1080, '€1,080 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/7cdb2853/boutenslaan', None, None, None, '', '2025-03-08 12:57:30.040455', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,713 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Meerring 187', 1905, '€1,905 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/dd6c148e/meerring', None, None, None, '', '2025-03-08 12:57:30.109972', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,715 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Bomanshof 281', 1050, '€1,050 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/9f9977a9/bomanshof', None, None, None, '', '2025-03-08 12:57:30.194488', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,716 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Dopheide', 1795, '€1,795 per month', 'https://www.pararius.com/house-for-rent/eindhoven/a6b993e4/dopheide', None, None, None, '', '2025-03-08 12:57:30.247033', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,717 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Egelstraat 46', 1395, '€1,395 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/7bbf0747/egelstraat', None, None, None, '', '2025-03-08 12:57:30.303646', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,720 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Meergras 1', 1375, '€1,375 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/e207b85c/meergras', None, None, None, '', '2025-03-08 12:57:30.356268', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,723 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Ir Kalffstraat 246', 1111, '€1,111 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/d7808a63/ir-kalffstraat', None, None, None, '', '2025-03-08 12:57:30.442292', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,727 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Ehrenstein', 1950, '€1,950 per month', 'https://www.pararius.com/house-for-rent/eindhoven/5655ec7e/ehrenstein', None, None, None, '', '2025-03-08 12:57:30.496494', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,730 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('House Tullelaan', 1950, '€1,950 per month', 'https://www.pararius.com/house-for-rent/eindhoven/30c3ca61/tullelaan', None, None, None, '', '2025-03-08 12:57:30.540124', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,732 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Meergras 71', 1809, '€1,809 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/bd8eff8e/meergras', None, None, None, '', '2025-03-08 12:57:30.588320', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,735 - app.scraper.utils - ERROR - Error adding listing to database: (sqlite3.IntegrityError) UNIQUE constraint failed: listing.url
+[SQL: INSERT INTO listing (title, price, price_text, url, address, bedrooms, area, specs, date_found, notified, subscription_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Flat Zeelsterstraat', 950, '€950 per month', 'https://www.pararius.com/apartment-for-rent/eindhoven/26efbf6e/zeelsterstraat', None, None, None, '', '2025-03-08 12:57:30.667602', 0, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-08 12:57:30,794 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-08 12:57:33,993 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 12:57:33,993 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 12:57:33,994 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 12:57:34,006 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 12:57:34,006 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:02:21 CET)" executed successfully
+2025-03-08 12:57:38,033 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 30 new listings added
+2025-03-08 12:57:38,043 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 12:57:38,044 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:02:19 CET)" executed successfully
+2025-03-08 13:01:03,751 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:01:03] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-08 13:01:03,806 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:01:03] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:01:03,809 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:01:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:02:20,009 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:07:19 CET)" (scheduled at 2025-03-08 13:02:19.995717+01:00)
+2025-03-08 13:02:20,010 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:02:20,011 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:02:20,011 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:02:21,108 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:07:21 CET)" (scheduled at 2025-03-08 13:02:21.099357+01:00)
+2025-03-08 13:02:21,109 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:02:21,109 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:02:21,109 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:02:22,539 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:02:22,539 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:02:22,540 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:02:22,540 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:02:22,540 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:02:22,541 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:02:25,530 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:02:27,637 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:02:28,583 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:02:30,263 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:02:31,261 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:02:33,883 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:02:34,324 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:02:34,335 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:02:34,337 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:07:19 CET)" executed successfully
+2025-03-08 13:02:37,926 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:02:37,936 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:02:37,936 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:07:21 CET)" executed successfully
+2025-03-08 13:07:20,003 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:12:19 CET)" (scheduled at 2025-03-08 13:07:19.995717+01:00)
+2025-03-08 13:07:20,004 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:07:20,004 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:07:20,004 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:07:21,104 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:12:21 CET)" (scheduled at 2025-03-08 13:07:21.099357+01:00)
+2025-03-08 13:07:21,105 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:07:21,105 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:07:21,106 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:07:22,669 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:07:22,669 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:07:22,671 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:07:22,671 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:07:22,671 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:07:22,671 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:07:25,566 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:07:27,510 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:07:27,578 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:07:29,451 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:07:30,115 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:07:32,071 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:07:34,166 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:07:34,187 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:07:34,188 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:12:19 CET)" executed successfully
+2025-03-08 13:07:36,140 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:07:36,154 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:07:36,154 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:12:21 CET)" executed successfully
+2025-03-08 13:12:20,009 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:17:19 CET)" (scheduled at 2025-03-08 13:12:19.995717+01:00)
+2025-03-08 13:12:20,011 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:12:20,011 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:12:20,012 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:12:21,108 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:17:21 CET)" (scheduled at 2025-03-08 13:12:21.099357+01:00)
+2025-03-08 13:12:21,110 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:12:21,110 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:12:21,111 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:12:22,851 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:12:22,854 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:12:22,855 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:12:22,856 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:12:22,857 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:12:22,858 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:12:26,127 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:12:26,183 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:12:30,888 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:12:31,196 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:12:33,662 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:12:33,662 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:12:37,751 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:12:37,751 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:12:37,775 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:12:37,776 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:17:21 CET)" executed successfully
+2025-03-08 13:12:37,793 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:12:37,794 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:17:19 CET)" executed successfully
+2025-03-08 13:13:10,743 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:10] "GET / HTTP/1.1" 200 -
+2025-03-08 13:13:10,810 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:13:10,814 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:13:14,170 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:14] "GET /browse_listings HTTP/1.1" 200 -
+2025-03-08 13:13:14,211 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:13:14,214 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:13:21,471 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:21] "GET / HTTP/1.1" 200 -
+2025-03-08 13:13:21,524 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:21] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:13:21,525 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:13:22,478 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:22] "GET /subscriptions HTTP/1.1" 200 -
+2025-03-08 13:13:22,525 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:22] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:13:22,533 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:13:24,290 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:24] "GET /browse_listings HTTP/1.1" 200 -
+2025-03-08 13:13:24,345 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:24] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:13:24,347 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:13:24,670 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:24] "GET / HTTP/1.1" 200 -
+2025-03-08 13:13:24,726 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:24] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 13:13:24,728 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 13:13:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 13:17:19,998 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:22:19 CET)" (scheduled at 2025-03-08 13:17:19.995717+01:00)
+2025-03-08 13:17:20,000 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:17:20,001 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:17:20,001 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:17:21,116 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:22:21 CET)" (scheduled at 2025-03-08 13:17:21.099357+01:00)
+2025-03-08 13:17:21,118 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:17:21,120 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:17:21,121 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:17:23,072 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:17:23,074 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:17:23,075 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:17:23,080 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:17:23,083 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:17:23,083 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:17:26,166 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:17:26,304 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:17:29,303 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:17:29,576 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:17:32,664 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:17:32,665 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:17:36,711 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:17:36,711 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:17:36,729 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:17:36,730 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:22:21 CET)" executed successfully
+2025-03-08 13:17:36,744 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:17:36,745 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:22:19 CET)" executed successfully
+2025-03-08 13:22:20,012 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:27:19 CET)" (scheduled at 2025-03-08 13:22:19.995717+01:00)
+2025-03-08 13:22:20,014 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:22:20,016 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:22:20,017 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:22:21,115 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:27:21 CET)" (scheduled at 2025-03-08 13:22:21.099357+01:00)
+2025-03-08 13:22:21,116 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:22:21,117 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:22:21,118 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:22:23,054 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:22:23,056 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:22:23,056 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:22:23,058 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:22:23,060 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:22:23,061 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:22:26,160 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:22:26,227 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:22:30,715 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:22:31,047 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:22:34,104 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:22:34,104 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:22:38,157 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:22:38,158 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:22:38,193 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:22:38,195 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:27:21 CET)" executed successfully
+2025-03-08 13:22:38,205 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:22:38,206 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:27:19 CET)" executed successfully
+2025-03-08 13:27:20,000 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:32:19 CET)" (scheduled at 2025-03-08 13:27:19.995717+01:00)
+2025-03-08 13:27:20,003 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:27:20,004 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:27:20,004 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:27:21,115 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:32:21 CET)" (scheduled at 2025-03-08 13:27:21.099357+01:00)
+2025-03-08 13:27:21,117 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:27:21,117 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:27:21,118 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:27:23,076 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:27:23,080 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:27:23,081 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:27:23,081 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:27:23,085 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:27:23,086 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:27:26,780 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:27:28,396 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:27:31,425 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:27:34,224 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:27:34,734 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:27:36,881 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:27:38,795 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:27:38,814 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:27:38,815 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:32:21 CET)" executed successfully
+2025-03-08 13:27:40,958 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:27:40,978 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:27:40,979 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:32:19 CET)" executed successfully
+2025-03-08 13:32:20,005 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:37:19 CET)" (scheduled at 2025-03-08 13:32:19.995717+01:00)
+2025-03-08 13:32:20,007 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:32:20,008 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:32:20,008 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:32:21,105 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:37:21 CET)" (scheduled at 2025-03-08 13:32:21.099357+01:00)
+2025-03-08 13:32:21,107 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:32:21,108 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:32:21,109 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:32:23,072 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:32:23,074 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:32:23,075 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:32:23,076 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:32:23,077 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:32:23,077 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:32:26,482 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:32:28,333 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:32:31,910 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:32:34,459 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:32:36,043 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:32:38,558 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:32:40,106 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:32:40,126 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:32:40,127 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:37:19 CET)" executed successfully
+2025-03-08 13:32:42,623 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:32:42,634 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:32:42,635 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:37:21 CET)" executed successfully
+2025-03-08 13:37:20,014 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:42:19 CET)" (scheduled at 2025-03-08 13:37:19.995717+01:00)
+2025-03-08 13:37:20,015 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:37:20,016 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:37:20,017 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:37:21,113 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:42:21 CET)" (scheduled at 2025-03-08 13:37:21.099357+01:00)
+2025-03-08 13:37:21,115 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:37:21,117 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:37:21,118 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:37:22,953 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:37:22,955 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:37:22,956 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:37:22,956 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:37:22,958 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:37:22,959 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:37:26,491 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:37:26,499 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:37:30,925 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:37:31,209 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:37:34,250 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:37:34,282 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:37:38,340 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:37:38,348 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:37:38,348 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:42:21 CET)" executed successfully
+2025-03-08 13:37:38,367 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:37:38,378 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:37:38,379 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:42:19 CET)" executed successfully
+2025-03-08 13:42:20,009 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:47:19 CET)" (scheduled at 2025-03-08 13:42:19.995717+01:00)
+2025-03-08 13:42:20,011 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:42:20,011 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:42:20,012 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:42:21,101 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:47:21 CET)" (scheduled at 2025-03-08 13:42:21.099357+01:00)
+2025-03-08 13:42:21,103 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:42:21,104 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:42:21,105 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:42:22,886 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:42:22,886 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:42:22,890 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:42:22,890 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:42:22,890 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:42:22,891 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:42:26,158 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:42:28,132 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:42:30,982 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:42:33,407 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 13:42:33,675 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:42:35,688 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 13:42:37,744 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:42:37,764 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:42:37,765 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:47:19 CET)" executed successfully
+2025-03-08 13:42:39,777 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 13:42:39,795 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 13:42:39,795 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:47:21 CET)" executed successfully
+2025-03-08 13:47:20,009 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:52:19 CET)" (scheduled at 2025-03-08 13:47:19.995717+01:00)
+2025-03-08 13:47:20,011 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:47:20,012 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:47:20,012 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:47:21,104 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 13:52:21 CET)" (scheduled at 2025-03-08 13:47:21.099357+01:00)
+2025-03-08 13:47:21,105 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 13:47:21,106 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 13:47:21,107 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:47:22,774 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:47:22,777 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:47:22,778 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:47:22,780 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 13:47:22,783 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 13:47:22,784 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 13:47:25,924 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:47:26,111 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 13:47:26,633 - app.scraper.utils - ERROR - Error processing listing: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-03-08 13:47:30,702 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A87C6030>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.193/element
+2025-03-08 13:47:30,703 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027150C4D040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/059ec0574fffb63418dc44cb8bbbdf1a/element/f.A41485BED673D812E25510A36D55659C.d.7B54E2CD55C8878A61502EAF5A9B00F2.e.194/elements
+2025-03-08 13:47:34,770 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A8697790>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.193/element
+2025-03-08 13:47:34,770 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027150C4DAE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/059ec0574fffb63418dc44cb8bbbdf1a/element/f.A41485BED673D812E25510A36D55659C.d.7B54E2CD55C8878A61502EAF5A9B00F2.e.194/elements
+2025-03-08 13:47:38,826 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A87C57B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.193/element
+2025-03-08 13:47:38,826 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027150C4DD00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/059ec0574fffb63418dc44cb8bbbdf1a/element/f.A41485BED673D812E25510A36D55659C.d.7B54E2CD55C8878A61502EAF5A9B00F2.e.194/elements
+2025-03-08 13:47:42,872 - app.scraper.utils - ERROR - Error processing listing: HTTPConnectionPool(host='localhost', port=53722): Max retries exceeded with url: /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.193/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A87C6CF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-03-08 13:47:46,943 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027150C4D9D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/059ec0574fffb63418dc44cb8bbbdf1a/element/f.A41485BED673D812E25510A36D55659C.d.7B54E2CD55C8878A61502EAF5A9B00F2.e.195/element
+2025-03-08 13:47:46,943 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A87C6250>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.194/element
+2025-03-08 13:47:51,004 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027150C4D7B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/059ec0574fffb63418dc44cb8bbbdf1a/element/f.A41485BED673D812E25510A36D55659C.d.7B54E2CD55C8878A61502EAF5A9B00F2.e.195/element
+2025-03-08 13:47:51,004 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A87C6E00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.194/element
+2025-03-08 13:47:55,074 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000221A87C7240>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8d88efb849bd8d91b9896fc6872ce8f3/element/f.F89322EB2A3CA140ECFE1355B3D490C1.d.A90238FF526D042E90A70B7F5B84B326.e.194/element
+2025-03-08 13:47:55,074 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027150C4DF20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/059ec0574fffb63418dc44cb8bbbdf1a/element/f.A41485BED673D812E25510A36D55659C.d.7B54E2CD55C8878A61502EAF5A9B00F2.e.195/element
+2025-03-08 19:18:06,160 - app.tasks - INFO - Setting up scheduler...
+2025-03-08 19:18:06,306 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-08 19:18:06,307 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-08 19:18:06,309 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-08 19:18:06,309 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-08 19:18:06,371 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-08 19:18:06,372 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 19:18:06,375 - werkzeug - INFO -  * Restarting with stat
+2025-03-08 19:18:08,242 - app.tasks - INFO - Setting up scheduler...
+2025-03-08 19:18:08,265 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-08 19:18:08,265 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-08 19:18:08,268 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-08 19:18:08,269 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-08 19:18:08,282 - werkzeug - WARNING -  * Debugger is active!
+2025-03-08 19:18:08,287 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-08 19:18:11,266 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:11] "GET / HTTP/1.1" 200 -
+2025-03-08 19:18:11,442 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:11] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-08 19:18:11,483 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:11] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-03-08 19:18:11,828 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-08 19:18:18,443 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:18] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-08 19:18:18,504 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:18] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:18:18,507 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:18:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:19:12,380 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:19:12] "GET / HTTP/1.1" 200 -
+2025-03-08 19:19:12,433 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:19:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:19:12,434 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:19:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:21:48,561 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:21:48] "GET /browse_listings HTTP/1.1" 200 -
+2025-03-08 19:21:48,604 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:21:48] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:21:48,612 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:21:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:21:58,130 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:21:58] "GET /browse_listings?page=2&min_price=0&max_price=10000&min_bedrooms=0&max_bedrooms=10 HTTP/1.1" 200 -
+2025-03-08 19:21:58,201 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:21:58] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:21:58,207 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:21:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:22:01,568 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:01] "GET /browse_listings?page=3&min_price=0&max_price=10000&min_bedrooms=0&max_bedrooms=10 HTTP/1.1" 200 -
+2025-03-08 19:22:01,620 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:01] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:22:01,625 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:22:04,347 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:04] "GET /browse_listings?page=1&min_price=0&max_price=10000&min_bedrooms=0&max_bedrooms=10 HTTP/1.1" 200 -
+2025-03-08 19:22:04,399 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:04] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:22:04,402 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:22:07,577 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:07] "GET / HTTP/1.1" 200 -
+2025-03-08 19:22:07,640 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:07] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:22:07,645 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:22:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:23:06,316 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 19:28:06 CET)" (scheduled at 2025-03-08 19:23:06.306466+01:00)
+2025-03-08 19:23:06,318 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 19:23:06,319 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 19:23:06,320 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 19:23:08,268 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 19:28:08 CET)" (scheduled at 2025-03-08 19:23:08.264822+01:00)
+2025-03-08 19:23:08,269 - app.tasks - INFO - Running scheduled task to scrape Eindhoven listings...
+2025-03-08 19:23:08,270 - app.tasks - INFO - Starting Eindhoven apartment scraper...
+2025-03-08 19:23:08,270 - app.scraper.utils - INFO - Starting Eindhoven apartment scraper for URL: https://www.pararius.com/apartments/eindhoven
+2025-03-08 19:23:09,685 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 19:23:09,707 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 19:23:09,708 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 19:23:09,941 - app.scraper.utils - INFO - Successfully initialized Chrome WebDriver
+2025-03-08 19:23:09,944 - app.scraper.utils - INFO - Found 61 existing listings in database
+2025-03-08 19:23:09,945 - app.scraper.utils - INFO - Scraping page 1: https://www.pararius.com/apartments/eindhoven
+2025-03-08 19:23:13,101 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 19:23:15,226 - app.scraper.utils - INFO - Found 31 listings on page 1
+2025-03-08 19:23:17,426 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 19:23:20,130 - app.scraper.utils - INFO - No next page found, ending scrape
+2025-03-08 19:23:20,137 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 19:23:23,821 - app.scraper.utils - INFO - WebDriver closed
+2025-03-08 19:23:24,181 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 19:23:24,203 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 19:23:24,205 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 19:28:06 CET)" executed successfully
+2025-03-08 19:23:27,870 - app.tasks - INFO - Scraper completed successfully: 30 listings found, 0 new listings added
+2025-03-08 19:23:27,896 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-08 19:23:27,897 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-08 19:28:08 CET)" executed successfully
+2025-03-08 19:23:31,750 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:23:31] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-08 19:23:31,763 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:23:31] "GET / HTTP/1.1" 200 -
+2025-03-08 19:23:31,810 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:23:31] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-08 19:23:31,812 - werkzeug - INFO - 127.0.0.1 - - [08/Mar/2025 19:23:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-08 19:23:43,362 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-08 19:23:43,611 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 20:32:23,107 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 20:32:23,205 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 20:32:23,205 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 20:32:23,208 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 20:32:23,208 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 20:33:28,064 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 20:33:28,086 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 20:33:28,087 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 20:33:28,090 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 20:33:28,091 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:03:20,663 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:03:20,686 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:03:20,687 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:03:20,690 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:03:20,690 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:06:18,699 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:06:18,724 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:06:18,724 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:06:18,726 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:06:18,726 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:06:18,767 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:08:58,909 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:08:58,931 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:08:58,932 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:08:58,933 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:08:58,934 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:08:58,978 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:11:59,024 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:11:59,051 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:11:59,052 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:11:59,054 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:11:59,054 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:11:59,079 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:36:10,493 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:36:10,524 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:36:10,525 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:36:10,528 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:36:10,529 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:36:10,562 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-09 21:36:10,563 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 21:36:16,312 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:36:16] "GET / HTTP/1.1" 200 -
+2025-03-09 21:36:16,432 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:36:16] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-03-09 21:36:16,463 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:36:16] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-03-09 21:36:17,287 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:36:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-09 21:36:32,272 - app - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: subscription.city_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\app\routes.py", line 69, in index
+    ).first()
+      ~~~~~^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: subscription.city_id
+[SQL: SELECT subscription.id AS subscription_id, subscription.min_price AS subscription_min_price, subscription.max_price AS subscription_max_price, subscription.min_bedrooms AS subscription_min_bedrooms, subscription.max_bedrooms AS subscription_max_bedrooms, subscription.active AS subscription_active, subscription.created_at AS subscription_created_at, subscription.last_checked AS subscription_last_checked, subscription.user_id AS subscription_user_id, subscription.city_id AS subscription_city_id 
+FROM subscription 
+WHERE subscription.user_id = ? AND subscription.city_id = ? AND subscription.min_price = ? AND subscription.max_price = ? AND subscription.min_bedrooms = ? AND subscription.max_bedrooms = ?
+ LIMIT ? OFFSET ?]
+[parameters: (1, 2, 0, 3000, 1, 5, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-09 21:36:32,420 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:36:32] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-03-09 21:39:16,994 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:40:14,983 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:40:15,006 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:40:15,007 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:40:15,008 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:40:15,009 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:40:15,178 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:41:08,961 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:41:08,991 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:41:08,992 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:41:08,994 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:41:08,995 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:41:09,043 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:42:29,948 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:42:29,979 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:42:29,979 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:42:29,984 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:42:29,984 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:42:30,015 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:43:38,263 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:43:38,287 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:43:38,287 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:43:38,289 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:43:38,289 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:43:38,309 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:43:53,108 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:43:53,131 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:43:53,132 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:43:53,133 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:43:53,134 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:43:53,145 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-09 21:43:53,146 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 21:44:29,528 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:44:29,553 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:44:29,553 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:44:29,555 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:44:29,556 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:44:29,597 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:47:00,840 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:47:35,313 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:47:35,336 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:47:35,337 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:47:35,339 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:47:35,339 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:47:35,402 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-09 21:47:44,634 - app.tasks - INFO - Setting up scheduler...
+2025-03-09 21:47:44,656 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-09 21:47:44,657 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-09 21:47:44,660 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-09 21:47:44,660 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-09 21:47:44,672 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-09 21:47:44,673 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 21:48:52,715 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:48:52] "GET / HTTP/1.1" 200 -
+2025-03-09 21:48:52,858 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:48:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 21:48:52,860 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:48:52] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-09 21:49:01,161 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:01] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 21:49:01,179 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:01] "GET / HTTP/1.1" 200 -
+2025-03-09 21:49:01,226 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:01] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-09 21:49:01,229 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 21:49:19,665 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:19] "GET /browse_listings HTTP/1.1" 200 -
+2025-03-09 21:49:19,709 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-09 21:49:19,719 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 21:49:26,787 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:26] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-09 21:49:26,828 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:26] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-09 21:49:26,838 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:49:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 21:49:30,899 - app.tasks - INFO - Starting scrapers for all active cities...
+2025-03-09 21:49:30,901 - app.tasks - INFO - Found 2 active cities
+2025-03-09 21:49:30,902 - app.tasks - INFO - Running scraper for Eindhoven...
+2025-03-09 21:49:31,209 - app.scraper.base - INFO - Starting apartment scraper for Eindhoven (URL: https://www.pararius.com/apartments/eindhoven)
+2025-03-09 21:49:34,343 - app.scraper.base - INFO - Found 0 existing listings for Eindhoven in database
+2025-03-09 21:49:34,344 - app.scraper.base - INFO - Scraping page 1 for Eindhoven: https://www.pararius.com/apartments/eindhoven
+2025-03-09 21:49:39,408 - app.scraper.base - INFO - Found 31 listings on page 1 for Eindhoven
+2025-03-09 21:49:43,190 - app.scraper.base - INFO - No next page found for Eindhoven, ending scrape
+2025-03-09 21:49:43,191 - app.scraper.base - INFO - No more pages to scrape for Eindhoven
+2025-03-09 21:49:43,192 - app.scraper.base - INFO - Saving 30 new listings for Eindhoven
+2025-03-09 21:49:43,232 - app.scraper.base - INFO - Added 30 new listings for Eindhoven to database
+2025-03-09 21:49:43,233 - app.scraper.utils - INFO - Matching 30 new listings to subscriptions
+2025-03-09 21:49:43,248 - app.scraper.utils - INFO - Found 0 active subscriptions for city 1
+2025-03-09 21:49:46,630 - app.scraper.base - INFO - WebDriver closed for Eindhoven scraper
+2025-03-09 21:49:50,679 - app.tasks - INFO - Eindhoven scraper completed: 30 listings found, 30 new listings added
+2025-03-09 21:49:50,682 - app.tasks - INFO - Updated last_checked timestamp for 0 active subscriptions
+2025-03-09 21:49:50,684 - app.tasks - INFO - Running scraper for Rotterdam...
+2025-03-09 21:49:50,685 - app.scraper.base - INFO - Starting apartment scraper for Rotterdam (URL: https://www.pararius.com/apartments/rotterdam)
+2025-03-09 21:49:53,292 - app.scraper.base - INFO - Found 0 existing listings for Rotterdam in database
+2025-03-09 21:49:53,293 - app.scraper.base - INFO - Scraping page 1 for Rotterdam: https://www.pararius.com/apartments/rotterdam
+2025-03-09 21:49:57,978 - app.scraper.base - INFO - Found 30 listings on page 1 for Rotterdam
+2025-03-09 21:50:00,598 - app.scraper.base - INFO - No next page found for Rotterdam, ending scrape
+2025-03-09 21:50:00,599 - app.scraper.base - INFO - No more pages to scrape for Rotterdam
+2025-03-09 21:50:00,599 - app.scraper.base - INFO - Saving 30 new listings for Rotterdam
+2025-03-09 21:50:00,629 - app.scraper.base - INFO - Added 30 new listings for Rotterdam to database
+2025-03-09 21:50:00,630 - app.scraper.utils - INFO - Matching 30 new listings to subscriptions
+2025-03-09 21:50:00,643 - app.scraper.utils - INFO - Found 1 active subscriptions for city 2
+2025-03-09 21:50:00,644 - app.scraper.utils - INFO - Sending notification to pablovegarzv2@gmail.com with 28 matched listings for Rotterdam
+2025-03-09 21:50:00,645 - app.scraper.utils - INFO - Preparing email with 28 new listings for pablovegarzv2@gmail.com in Rotterdam
+2025-03-09 21:50:03,241 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-09 21:50:06,513 - app.scraper.base - INFO - WebDriver closed for Rotterdam scraper
+2025-03-09 21:50:10,560 - app.tasks - INFO - Rotterdam scraper completed: 30 listings found, 30 new listings added
+2025-03-09 21:50:10,578 - app.tasks - INFO - Updated last_checked timestamp for 1 active subscriptions
+2025-03-09 21:50:10,580 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:10] "[32mGET /test_scraper HTTP/1.1[0m" 302 -
+2025-03-09 21:50:10,615 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:10] "GET / HTTP/1.1" 200 -
+2025-03-09 21:50:10,752 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-09 21:50:10,830 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 21:50:32,029 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:32] "GET /browse_listings HTTP/1.1" 200 -
+2025-03-09 21:50:32,087 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:32] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-09 21:50:32,097 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 21:50:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 21:52:04,950 - apscheduler.scheduler - INFO - Scheduler has been shut down

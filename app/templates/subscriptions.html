@@ -33,6 +33,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>City</th>
                                     <th>Price Range</th>
                                     <th>Bedrooms</th>
                                     <th>Created</th>
@@ -44,6 +45,7 @@
                             <tbody>
                                 {% for sub in subscriptions %}
                                 <tr>
+                                    <td>{{ sub.city.name }}</td>
                                     <td>€{{ sub.min_price }} - €{{ sub.max_price }}</td>
                                     <td>{{ sub.min_bedrooms }} - {{ sub.max_bedrooms }}</td>
                                     <td>{{ sub.created_at.strftime('%Y-%m-%d') }}</td>
@@ -77,14 +79,28 @@
                 {% endif %}
             </div>
         </div>
-        
+
         <div class="card mt-4">
             <div class="card-header">
                 <h3 class="mb-0">Run Scraper Test</h3>
             </div>
             <div class="card-body">
-                <p>Run the Eindhoven scraper manually:</p>
-                <a href="{{ url_for('main.test_scraper') }}" class="btn btn-warning">Run Eindhoven Scraper</a>
+                <p>Run all scrapers:</p>
+                <a href="{{ url_for('main.test_scraper') }}" class="btn btn-warning">Run All Scrapers</a>
+
+                <hr>
+
+                <p>Run individual city scrapers:</p>
+                <div class="row">
+                    {% for city in City.query.all() %}
+                    <div class="col-md-4 mb-2">
+                        <a href="{{ url_for('main.test_scraper_city', city_id=city.id) }}"
+                           class="btn btn-outline-warning btn-sm w-100">
+                           Run {{ city.name }} Scraper
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,3 @@
-<!-- app/templates/listings.html -->
 {% extends "base.html" %}
 
 {% block title %}Browse Listings{% endblock %}
@@ -7,11 +6,21 @@
 <div class="row">
     <div class="col-md-12">
         <h1 class="mb-4">Apartment Listings</h1>
-        
+
         <div class="card mb-4">
             <div class="card-body">
                 <form action="{{ url_for('main.browse_listings') }}" method="GET">
                     <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label">City</label>
+                            <select name="city_id" class="form-select">
+                                <option value="">All Cities</option>
+                                {% for city in cities %}
+                                <option value="{{ city.id }}" {% if city_id == city.id %}selected{% endif %}>{{ city.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
                         <div class="col-md-3">
                             <label class="form-label">Price Range</label>
                             <div class="d-flex align-items-center">
@@ -39,57 +48,58 @@
                                 <i class="bi bi-filter me-1"></i> Apply Filters
                             </button>
                         </div>
-                        <div class="col-md-2 d-flex align-items-end">
+                        <div class="col-md-1 d-flex align-items-end">
                             <a href="{{ url_for('main.browse_listings') }}" class="btn btn-outline-secondary w-100">
-                                <i class="bi bi-x-circle me-1"></i> Reset
+                                <i class="bi bi-x-circle"></i>
                             </a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        
+
         {% if listings.items %}
             <div class="row">
                 {% for listing in listings.items %}
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card listing-card">
                             <div class="card-header">
+                                <span class="badge bg-info float-end">{{ listing.city.name }}</span>
                                 <h5 class="card-title mb-0 text-truncate">{{ listing.title }}</h5>
                             </div>
                             <div class="card-body">
                                 <div class="listing-price">{{ listing.price_text }}</div>
-                                
+
                                 {% if listing.address %}
                                     <div class="listing-address">
                                         <i class="bi bi-geo-alt"></i> {{ listing.address }}
                                     </div>
                                 {% endif %}
-                                
+
                                 <div class="listing-features">
                                     {% if listing.bedrooms %}
                                         <span class="listing-feature">
                                             <i class="bi bi-house-door"></i> {{ listing.bedrooms }} bedroom{% if listing.bedrooms != 1 %}s{% endif %}
                                         </span>
                                     {% endif %}
-                                    
+
                                     {% if listing.area %}
                                         <span class="listing-feature">
                                             <i class="bi bi-arrows-fullscreen"></i> {{ listing.area }} m²
                                         </span>
                                     {% endif %}
                                 </div>
-                                
+
                                 {% if listing.specs %}
                                     <div class="small text-muted mb-3">
                                         {{ listing.specs }}
                                     </div>
                                 {% endif %}
-                                
+
                                 <div class="listing-date">
                                     <i class="bi bi-calendar3"></i> Added {{ listing.date_found.strftime('%d %b %Y') }}
                                 </div>
-                                
+
                                 <a href="{{ listing.url }}" target="_blank" class="btn btn-primary mt-3">
                                     <i class="bi bi-link-45deg"></i> View Property
                                 </a>
@@ -98,12 +108,12 @@
                     </div>
                 {% endfor %}
             </div>
-            
+
             <nav aria-label="Listings pagination">
                 <ul class="pagination justify-content-center">
                     {% if listings.has_prev %}
                         <li class="page-item">
-                            <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.prev_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">
+                            <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.prev_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms, city_id=city_id) }}">
                                 <i class="bi bi-chevron-left"></i> Previous
                             </a>
                         </li>
@@ -114,7 +124,7 @@
                             </span>
                         </li>
                     {% endif %}
-                    
+
                     {% for page_num in listings.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                         {% if page_num %}
                             {% if page_num == listings.page %}
@@ -123,7 +133,7 @@
                                 </li>
                             {% else %}
                                 <li class="page-item">
-                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=page_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">{{ page_num }}</a>
+                                    <a class="page-link" href="{{ url_for('main.browse_listings', page=page_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms, city_id=city_id) }}">{{ page_num }}</a>
                                 </li>
                             {% endif %}
                         {% else %}
@@ -132,10 +142,10 @@
                             </li>
                         {% endif %}
                     {% endfor %}
-                    
+
                     {% if listings.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.next_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms) }}">
+                            <a class="page-link" href="{{ url_for('main.browse_listings', page=listings.next_num, min_price=min_price, max_price=max_price, min_bedrooms=min_bedrooms, max_bedrooms=max_bedrooms, city_id=city_id) }}">
                                 Next <i class="bi bi-chevron-right"></i>
                             </a>
                         </li>
