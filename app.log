@@ -5561,3 +5561,34 @@ Stacktrace:
 2025-03-10 16:59:18,667 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 16:59:18] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
 2025-03-10 16:59:36,752 - apscheduler.scheduler - INFO - Scheduler has been shut down
 2025-03-10 16:59:36,969 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:15:35,569 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:15:35,597 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:15:35,598 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:15:35,600 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:15:35,601 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:15:35,637 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-10 17:15:35,638 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 17:15:35,643 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:15:37,392 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:15:37,427 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:15:37,428 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:15:37,431 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:15:37,432 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:15:37,448 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:15:37,453 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:15:37,666 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:37] "GET / HTTP/1.1" 200 -
+2025-03-10 17:15:37,793 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:37] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:15:37,795 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:15:42,794 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:42] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:15:42,851 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:42] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:15:42,854 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:15:45,452 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:45] "GET /edit_subscription/1 HTTP/1.1" 200 -
+2025-03-10 17:15:45,532 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:45] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:15:45,534 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:15:48,229 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:48] "[32mPOST /edit_subscription/1 HTTP/1.1[0m" 302 -
+2025-03-10 17:15:48,260 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:48] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:15:48,345 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:48] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:15:48,349 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:16:06,181 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:16:06,359 - apscheduler.scheduler - INFO - Scheduler has been shut down

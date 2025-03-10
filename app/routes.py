@@ -200,3 +200,41 @@ def test_scraper():
         flash(flash_message, 'danger')
 
     return redirect(url_for('main.index'))
+
+@main_bp.route('/edit_subscription/<int:sub_id>', methods=['GET', 'POST'])
+def edit_subscription(sub_id):
+    subscription = Subscription.query.get_or_404(sub_id)
+    email = subscription.user.email
+
+    # Create form and populate it with the subscription's current values
+    form = SubscriptionForm()
+    form.city_id.choices = [(c.id, c.name) for c in City.query.filter_by(active=True).all()]
+
+    if form.validate_on_submit():
+        try:
+            # Update subscription with new values
+            subscription.min_price = max(0, int(form.min_price.data or 0))
+            subscription.max_price = min(10000, int(form.max_price.data or 3000))
+            subscription.min_bedrooms = max(0, int(form.min_bedrooms.data or 0))
+            subscription.max_bedrooms = min(10, int(form.max_bedrooms.data or 5))
+            subscription.city_id = int(form.city_id.data)
+            subscription.active = True  # Ensure it's active
+
+            db.session.commit()
+            flash('Subscription updated successfully!', 'success')
+            return redirect(url_for('main.subscriptions', email=email))
+
+        except ValueError:
+            flash('Invalid input values', 'danger')
+            return redirect(url_for('main.edit_subscription', sub_id=sub_id))
+
+    elif request.method == 'GET':
+        # Populate form with existing subscription data
+        form.email.data = email
+        form.city_id.data = subscription.city_id
+        form.min_price.data = subscription.min_price
+        form.max_price.data = subscription.max_price
+        form.min_bedrooms.data = subscription.min_bedrooms
+        form.max_bedrooms.data = subscription.max_bedrooms
+
+    return render_template('edit_subscription.html', form=form, subscription=subscription)

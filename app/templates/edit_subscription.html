@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Subscription{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.css">
+<style>
+    .bedroom-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        color: var(--muted-color);
+        font-weight: 500;
+    }
+
+    /* Enhanced styles for slider pips/markers */
+    .noUi-pips {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    /* Make the pip values more visible */
+    .noUi-value {
+        color: #333;
+        font-weight: 500;
+    }
+
+    /* Enhance the markers themselves */
+    .noUi-marker {
+        background: #333;
+    }
+
+    .noUi-marker-large {
+        height: 14px;
+    }
+
+    .noUi-marker-normal {
+        height: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="subscription-form-container">
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h2 class="mb-0">Edit Subscription</h2>
+        </div>
+        <div class="card-body">
+            <p class="lead">
+                Update your subscription settings for apartment notifications.
+            </p>
+
+            <form method="POST" action="{{ url_for('main.edit_subscription', sub_id=subscription.id) }}" id="subscriptionForm">
+                {{ form.hidden_tag() }}
+                {{ form.min_price() }}
+                {{ form.max_price() }}
+                {{ form.min_bedrooms() }}
+                {{ form.max_bedrooms() }}
+
+                <div class="mb-4">
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-control", readonly=True) }}
+                </div>
+
+                <div class="mb-4">
+                    {{ form.city_id.label(class="form-label") }}
+                    {{ form.city_id(class="form-select") }}
+                    {% if form.city_id.errors %}
+                        <div class="text-danger mt-2">
+                            {% for error in form.city_id.errors %}
+                                <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Price Range (€)</label>
+                    <div id="price-slider" class="price-slider"></div>
+                    <div class="price-labels">
+                        <span id="price-min">€{{ subscription.min_price }}</span>
+                        <span id="price-max">€{{ subscription.max_price }}</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Bedrooms</label>
+                    <div id="bedroom-slider" class="price-slider"></div>
+                    <div class="price-labels bedroom-labels">
+                        <span>Studio</span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+                </div>
+                <div class="d-grid mt-3">
+                    <a href="{{ url_for('main.subscriptions', email=form.email.data) }}" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize price slider
+        const priceSlider = document.getElementById('price-slider');
+        const minPriceInput = document.getElementById('min_price');
+        const maxPriceInput = document.getElementById('max_price');
+        const minPriceLabel = document.getElementById('price-min');
+        const maxPriceLabel = document.getElementById('price-max');
+
+        noUiSlider.create(priceSlider, {
+            start: [parseInt(minPriceInput.value) || 0, parseInt(maxPriceInput.value) || 3000],
+            connect: true,
+            step: 50,
+            range: {
+                'min': 0,
+                'max': 3000
+            },
+            format: {
+                to: function (value) {
+                    return Math.round(value);
+                },
+                from: function (value) {
+                    return Math.round(value);
+                }
+            },
+            pips: {
+                mode: 'values',
+                values: [0, 500, 1000, 1500, 2000, 2500, 3000],
+                density: 4
+            }
+        });
+
+        priceSlider.noUiSlider.on('update', function(values, handle) {
+            const min = values[0];
+            const max = values[1];
+
+            minPriceInput.value = min;
+            maxPriceInput.value = max;
+            minPriceLabel.textContent = '€' + min;
+            maxPriceLabel.textContent = '€' + max;
+        });
+
+        // Initialize bedroom slider
+        const bedroomSlider = document.getElementById('bedroom-slider');
+        const minBedroomsInput = document.getElementById('min_bedrooms');
+        const maxBedroomsInput = document.getElementById('max_bedrooms');
+
+        noUiSlider.create(bedroomSlider, {
+            start: [parseInt(minBedroomsInput.value) || 0, parseInt(maxBedroomsInput.value) || 5],
+            connect: true,
+            step: 1,
+            range: {
+                'min': 0,
+                'max': 5
+            },
+            format: {
+                to: function (value) {
+                    return Math.round(value);
+                },
+                from: function (value) {
+                    return Math.round(value);
+                }
+            },
+            pips: {
+                mode: 'count',
+                values: 6,
+                density: 20,
+                stepped: true,
+                format: {
+                    to: function(value) {
+                        return Math.round(value);
+                    }
+                }
+            }
+        });
+
+        bedroomSlider.noUiSlider.on('update', function(values, handle) {
+            const min = values[0];
+            const max = values[1];
+
+            minBedroomsInput.value = min;
+            maxBedroomsInput.value = max;
+        });
+    });
+</script>
+{% endblock %}

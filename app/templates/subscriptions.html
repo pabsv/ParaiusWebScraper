@@ -65,10 +65,12 @@
                                     </td>
                                     <td>
                                         {% if sub.active %}
+                                            <a href="{{ url_for('main.edit_subscription', sub_id=sub.id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
                                             <a href="{{ url_for('main.unsubscribe', sub_id=sub.id) }}" class="btn btn-sm btn-outline-danger">Unsubscribe</a>
                                             <a href="{{ url_for('main.test_email', sub_id=sub.id) }}?email={{ email }}" class="btn btn-sm btn-outline-info ms-1">Test Email</a>
                                         {% else %}
                                             <a href="{{ url_for('main.reactivate', sub_id=sub.id) }}" class="btn btn-sm btn-outline-success">Reactivate</a>
+                                            <a href="{{ url_for('main.edit_subscription', sub_id=sub.id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
                                         {% endif %}
                                     </td>
                                 </tr>
