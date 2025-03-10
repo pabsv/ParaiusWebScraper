@@ -5592,3 +5592,418 @@ Stacktrace:
 2025-03-10 17:15:48,349 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:15:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-03-10 17:16:06,181 - apscheduler.scheduler - INFO - Scheduler has been shut down
 2025-03-10 17:16:06,359 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:18:29,650 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:18:29,682 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:18:29,683 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:18:29,685 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:18:29,686 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:18:29,713 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-10 17:18:29,714 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 17:18:29,720 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:18:31,278 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:18:31,314 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:18:31,315 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:18:31,317 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:18:31,318 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:18:31,335 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:18:31,341 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:18:31,470 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:18:31] "GET / HTTP/1.1" 200 -
+2025-03-10 17:18:31,632 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:18:31] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:18:31,634 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:18:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:20:40,516 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:20:40,692 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:24:14,218 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:24:14,250 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:24:14,251 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:24:14,254 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:24:14,255 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:24:14,295 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-10 17:24:14,296 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 17:24:14,300 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:24:15,845 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:24:15,874 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:24:15,875 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:24:15,878 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:24:15,878 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:24:15,893 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:24:15,897 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:24:16,629 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:24:16] "GET / HTTP/1.1" 200 -
+2025-03-10 17:24:16,769 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:24:16] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:24:16,771 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:24:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:24:20,912 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:24:20] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:24:20,968 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:24:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:24:20,969 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:24:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:25:04,555 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:04] "GET /subscriptions HTTP/1.1" 200 -
+2025-03-10 17:25:04,620 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:04] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:25:04,628 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:25:07,277 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:07] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:25:07,330 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:07] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:25:07,335 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:25:10,026 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:10] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:25:10,072 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:25:10,075 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:25:10,431 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:10] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:25:10,469 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:25:10,472 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:25:45,616 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:45] "GET /edit_subscription/8 HTTP/1.1" 200 -
+2025-03-10 17:25:45,709 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:45] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:25:45,715 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:25:50,406 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:50] "[32mPOST /edit_subscription/8 HTTP/1.1[0m" 302 -
+2025-03-10 17:25:50,427 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:50] "GET /subscriptions?email=mrozalski93%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:25:50,487 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:50] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:25:50,491 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:25:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:26:27,045 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:27] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:26:27,131 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:27] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:26:27,146 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:26:28,760 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:28] "GET /edit_subscription/7 HTTP/1.1" 200 -
+2025-03-10 17:26:28,829 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:28] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:26:28,833 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:26:30,285 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:30] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:26:30,345 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:30] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:26:30,347 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:26:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:27:57,433 - werkzeug - INFO -  * Detected change in 'C:\\Users\\20231423\\Documents\\WebScraper\\app\\routes.py', reloading
+2025-03-10 17:27:57,434 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:27:57,609 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:27:59,401 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:27:59,431 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:27:59,432 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:27:59,435 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:27:59,435 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:27:59,450 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:27:59,453 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:28:43,073 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:43] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:28:43,219 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:28:43,221 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:28:47,234 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:47] "GET /edit_subscription/1 HTTP/1.1" 200 -
+2025-03-10 17:28:47,323 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:47] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:28:47,327 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:28:49,988 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:49] "[32mPOST /edit_subscription/1 HTTP/1.1[0m" 302 -
+2025-03-10 17:28:50,016 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:50] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:28:50,078 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:50] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:28:50,079 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:28:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:29:14,278 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-10 17:34:14 CET)" (scheduled at 2025-03-10 17:29:14.250382+01:00)
+2025-03-10 17:29:14,279 - app.tasks - INFO - Running scheduled task to scrape apartment listings...
+2025-03-10 17:29:14,280 - app.tasks - INFO - Starting scrapers for all active cities...
+2025-03-10 17:29:14,315 - app.tasks - INFO - Found 2 active cities
+2025-03-10 17:29:14,316 - app.tasks - INFO - Running scraper for Eindhoven...
+2025-03-10 17:29:14,535 - app.scraper.base - INFO - Starting apartment scraper for Eindhoven (URL: https://www.pararius.com/apartments/eindhoven)
+2025-03-10 17:29:21,906 - app.scraper.base - INFO - Found 50 existing listings for Eindhoven in database
+2025-03-10 17:29:21,907 - app.scraper.base - INFO - Scraping page 1 for Eindhoven: https://www.pararius.com/apartments/eindhoven
+2025-03-10 17:29:29,345 - app.scraper.base - INFO - Found 32 listings on page 1 for Eindhoven
+2025-03-10 17:29:33,243 - app.scraper.base - INFO - No next page found for Eindhoven, ending scrape
+2025-03-10 17:29:33,244 - app.scraper.base - INFO - No more pages to scrape for Eindhoven
+2025-03-10 17:29:33,245 - app.scraper.base - INFO - Saving 1 new listings for Eindhoven
+2025-03-10 17:29:33,266 - app.scraper.base - INFO - Added 1 new listings for Eindhoven to database
+2025-03-10 17:29:33,267 - app.scraper.utils - INFO - Matching 1 new listings to subscriptions
+2025-03-10 17:29:33,273 - app.scraper.utils - INFO - Found 4 active subscriptions for city 1
+2025-03-10 17:29:33,278 - app.scraper.utils - INFO - Sending notification to grzes.karwasinski@gmail.com with 1 matched listings for Eindhoven
+2025-03-10 17:29:33,279 - app.scraper.utils - INFO - Preparing email with 1 new listings for grzes.karwasinski@gmail.com in Eindhoven
+2025-03-10 17:29:35,956 - app.scraper.utils - INFO - Email notification sent successfully to grzes.karwasinski@gmail.com!
+2025-03-10 17:29:35,968 - app.scraper.utils - INFO - Sending notification to pablovegarzv2@gmail.com with 1 matched listings for Eindhoven
+2025-03-10 17:29:35,969 - app.scraper.utils - INFO - Preparing email with 1 new listings for pablovegarzv2@gmail.com in Eindhoven
+2025-03-10 17:29:39,163 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-10 17:29:39,166 - app.scraper.utils - INFO - Sending notification to ardenkost@gmail.com with 1 matched listings for Eindhoven
+2025-03-10 17:29:39,167 - app.scraper.utils - INFO - Preparing email with 1 new listings for ardenkost@gmail.com in Eindhoven
+2025-03-10 17:29:41,322 - app.scraper.utils - INFO - Email notification sent successfully to ardenkost@gmail.com!
+2025-03-10 17:29:41,326 - app.scraper.utils - INFO - Sending notification to mrozalski93@gmail.com with 1 matched listings for Eindhoven
+2025-03-10 17:29:41,326 - app.scraper.utils - INFO - Preparing email with 1 new listings for mrozalski93@gmail.com in Eindhoven
+2025-03-10 17:29:43,122 - app.scraper.utils - INFO - Email notification sent successfully to mrozalski93@gmail.com!
+2025-03-10 17:29:44,471 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:29:44,493 - app.tasks - ERROR - Error in scraper for Eindhoven: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-03-10 17:29:44,559 - app.tasks - ERROR - Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\app\tasks.py", line 49, in check_all_cities
+    success, total_count, new_count = run_scraper_for_city(city)
+                                      ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\app\scraper\utils.py", line 515, in run_scraper_for_city
+    return scraper.scrape()
+           ~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\Documents\WebScraper\app\scraper\base.py", line 98, in scrape
+    driver.quit()
+    ~~~~~~~~~~~^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 196, in quit
+    self.service.stop()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\common\service.py", line 154, in stop
+    self.send_remote_shutdown_command()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\common\service.py", line 133, in send_remote_shutdown_command
+    request.urlopen(f"{self.service_url}/shutdown")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 489, in open
+    response = self._open(req, data)
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 466, in _call_chain
+    result = func(*args)
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 1348, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 1323, in do_open
+    r = h.getresponse()
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+2025-03-10 17:29:48,617 - app.tasks - INFO - Running scraper for Rotterdam...
+2025-03-10 17:29:48,619 - app.scraper.base - INFO - Starting apartment scraper for Rotterdam (URL: https://www.pararius.com/apartments/rotterdam)
+2025-03-10 17:29:50,307 - app.scraper.base - INFO - Found 38 existing listings for Rotterdam in database
+2025-03-10 17:29:50,308 - app.scraper.base - INFO - Scraping page 1 for Rotterdam: https://www.pararius.com/apartments/rotterdam
+2025-03-10 17:29:54,632 - app.scraper.base - ERROR - Error scraping page 1 for Rotterdam: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-03-10 17:29:54,828 - app.scraper.base - ERROR - Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\20231423\Documents\WebScraper\app\scraper\base.py", line 106, in scrape_page
+    driver.get(page_url)
+    ~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in get
+    self.execute(Command.GET, {"url": url})
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 343, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 291, in execute
+    return self._request(command_info[0], url, body=data)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 312, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        method, url, fields=fields, headers=headers, **urlopen_kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\20231423\Documents\WebScraper\new_venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\20231423\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+2025-03-10 17:29:54,831 - app.scraper.base - INFO - No more pages to scrape for Rotterdam
+2025-03-10 17:29:54,832 - app.scraper.base - INFO - No new listings to save for Rotterdam
+2025-03-10 17:29:58,885 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002C2194EB750>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bcb88d06206d07226e9de6b252399ccc
+2025-03-10 17:30:02,916 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002C2194F6FD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bcb88d06206d07226e9de6b252399ccc
+2025-03-10 17:30:06,968 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002C2194F68B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/bcb88d06206d07226e9de6b252399ccc
+2025-03-10 17:30:15,087 - app.scraper.base - INFO - WebDriver closed for Rotterdam scraper
+2025-03-10 17:30:15,089 - app.tasks - INFO - Rotterdam scraper completed: 0 listings found, 0 new listings added
+2025-03-10 17:30:15,110 - app.tasks - INFO - Updated last_checked timestamp for 2 active subscriptions
+2025-03-10 17:30:15,111 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-10 17:34:14 CET)" executed successfully
+2025-03-10 17:30:15,174 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:30:27,075 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:30:27,105 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:30:27,105 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:30:27,107 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:30:27,108 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:30:27,141 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-10 17:30:27,142 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 17:30:27,145 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:30:28,684 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:30:28,728 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:30:28,729 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:30:28,731 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:30:28,732 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:30:28,746 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:30:28,751 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:30:28,918 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:28] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:30:29,035 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:29] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:30:29,035 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:30:30,648 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:30] "GET / HTTP/1.1" 200 -
+2025-03-10 17:30:30,706 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:30] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:30:30,707 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:30:32,576 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:32] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:30:32,644 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:32] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:30:32,654 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:30:36,225 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:36] "GET /edit_subscription/1 HTTP/1.1" 200 -
+2025-03-10 17:30:36,286 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:36] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:30:36,289 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:30:38,471 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:38] "[32mPOST /edit_subscription/1 HTTP/1.1[0m" 302 -
+2025-03-10 17:30:38,495 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:38] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:30:38,583 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:38] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:30:38,592 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:30:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:31:06,667 - werkzeug - INFO -  * Detected change in 'C:\\Users\\20231423\\Documents\\WebScraper\\app\\routes.py', reloading
+2025-03-10 17:31:06,667 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:31:06,829 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:31:08,290 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:31:08,335 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:31:08,336 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:31:08,340 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:31:08,342 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:31:08,365 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:31:08,370 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:31:09,164 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:09] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:31:09,286 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:09] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:31:09,295 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:31:10,995 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:10] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:31:11,043 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:11] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:31:11,054 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:31:14,201 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:14] "GET /edit_subscription/1 HTTP/1.1" 200 -
+2025-03-10 17:31:14,268 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:31:14,269 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:31:16,423 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:16] "[32mPOST /edit_subscription/1 HTTP/1.1[0m" 302 -
+2025-03-10 17:31:16,448 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:16] "GET /subscriptions?email=pablovegarzv2%40gmail.com HTTP/1.1" 200 -
+2025-03-10 17:31:16,529 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:16] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:31:16,540 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:31:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:34:17,757 - werkzeug - INFO -  * Detected change in 'C:\\Users\\20231423\\Documents\\WebScraper\\app\\routes.py', reloading
+2025-03-10 17:34:17,759 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:34:17,981 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:34:19,586 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:34:19,618 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:34:19,618 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:34:19,622 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:34:19,624 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:34:19,640 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:34:19,646 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:35:27,114 - apscheduler.executors.default - INFO - Running job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-10 17:40:27 CET)" (scheduled at 2025-03-10 17:35:27.104787+01:00)
+2025-03-10 17:35:27,116 - app.tasks - INFO - Running scheduled task to scrape apartment listings...
+2025-03-10 17:35:27,116 - app.tasks - INFO - Starting scrapers for all active cities...
+2025-03-10 17:35:27,172 - app.tasks - INFO - Found 2 active cities
+2025-03-10 17:35:27,173 - app.tasks - INFO - Running scraper for Eindhoven...
+2025-03-10 17:35:27,569 - app.scraper.base - INFO - Starting apartment scraper for Eindhoven (URL: https://www.pararius.com/apartments/eindhoven)
+2025-03-10 17:35:30,681 - app.scraper.base - INFO - Found 51 existing listings for Eindhoven in database
+2025-03-10 17:35:30,682 - app.scraper.base - INFO - Scraping page 1 for Eindhoven: https://www.pararius.com/apartments/eindhoven
+2025-03-10 17:35:37,944 - app.scraper.base - INFO - Found 32 listings on page 1 for Eindhoven
+2025-03-10 17:35:43,324 - app.scraper.base - INFO - No next page found for Eindhoven, ending scrape
+2025-03-10 17:35:43,326 - app.scraper.base - INFO - No more pages to scrape for Eindhoven
+2025-03-10 17:35:43,327 - app.scraper.base - INFO - No new listings to save for Eindhoven
+2025-03-10 17:35:46,613 - app.scraper.base - INFO - WebDriver closed for Eindhoven scraper
+2025-03-10 17:35:50,674 - app.tasks - INFO - Eindhoven scraper completed: 31 listings found, 0 new listings added
+2025-03-10 17:35:50,702 - app.tasks - INFO - Updated last_checked timestamp for 4 active subscriptions
+2025-03-10 17:35:50,708 - app.tasks - INFO - Running scraper for Rotterdam...
+2025-03-10 17:35:50,709 - app.scraper.base - INFO - Starting apartment scraper for Rotterdam (URL: https://www.pararius.com/apartments/rotterdam)
+2025-03-10 17:35:52,481 - app.scraper.base - INFO - Found 38 existing listings for Rotterdam in database
+2025-03-10 17:35:52,483 - app.scraper.base - INFO - Scraping page 1 for Rotterdam: https://www.pararius.com/apartments/rotterdam
+2025-03-10 17:36:00,047 - app.scraper.base - INFO - Found 30 listings on page 1 for Rotterdam
+2025-03-10 17:36:06,697 - app.scraper.base - INFO - No next page found for Rotterdam, ending scrape
+2025-03-10 17:36:06,698 - app.scraper.base - INFO - No more pages to scrape for Rotterdam
+2025-03-10 17:36:06,698 - app.scraper.base - INFO - Saving 1 new listings for Rotterdam
+2025-03-10 17:36:06,723 - app.scraper.base - INFO - Added 1 new listings for Rotterdam to database
+2025-03-10 17:36:06,725 - app.scraper.utils - INFO - Matching 1 new listings to subscriptions
+2025-03-10 17:36:06,734 - app.scraper.utils - INFO - Found 2 active subscriptions for city 2
+2025-03-10 17:36:06,742 - app.scraper.utils - INFO - Sending notification to pablovegarzv2@gmail.com with 1 matched listings for Rotterdam
+2025-03-10 17:36:06,743 - app.scraper.utils - INFO - Preparing email with 1 new listings for pablovegarzv2@gmail.com in Rotterdam
+2025-03-10 17:36:09,217 - app.scraper.utils - INFO - Email notification sent successfully to pablovegarzv2@gmail.com!
+2025-03-10 17:36:12,880 - app.scraper.base - INFO - WebDriver closed for Rotterdam scraper
+2025-03-10 17:36:16,964 - app.tasks - INFO - Rotterdam scraper completed: 30 listings found, 1 new listings added
+2025-03-10 17:36:16,988 - app.tasks - INFO - Updated last_checked timestamp for 2 active subscriptions
+2025-03-10 17:36:16,989 - apscheduler.executors.default - INFO - Job "setup_scheduler.<locals>.run_check_with_context (trigger: interval[0:05:00], next run at: 2025-03-10 17:40:27 CET)" executed successfully
+2025-03-10 17:36:55,139 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:36:55,366 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:37:01,021 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:37:01,061 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:37:01,062 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:37:01,066 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:37:01,067 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:37:01,101 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-10 17:37:01,102 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 17:37:01,108 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 17:37:02,804 - app.tasks - INFO - Setting up scheduler...
+2025-03-10 17:37:02,839 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 17:37:02,839 - app.tasks - INFO - Scheduled task to run every 300 seconds
+2025-03-10 17:37:02,843 - apscheduler.scheduler - INFO - Added job "setup_scheduler.<locals>.run_check_with_context" to job store "default"
+2025-03-10 17:37:02,844 - apscheduler.scheduler - INFO - Scheduler started
+2025-03-10 17:37:02,867 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 17:37:02,873 - werkzeug - INFO -  * Debugger PIN: 434-737-409
+2025-03-10 17:37:03,360 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:03] "GET / HTTP/1.1" 200 -
+2025-03-10 17:37:03,510 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:03] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:37:03,511 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:37:07,899 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:07] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-03-10 17:37:07,966 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:07] "GET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-10 17:37:08,004 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:08] "GET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-10 17:37:08,061 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:08] "GET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-10 17:37:08,161 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:37:08] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-10 17:39:19,395 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:19] "GET / HTTP/1.1" 200 -
+2025-03-10 17:39:19,451 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:39:19,455 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:39:20,680 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:20] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:39:20,764 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:39:20,774 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:39:25,745 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:25] "GET /edit_subscription/1?return_to=admin HTTP/1.1" 200 -
+2025-03-10 17:39:25,849 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:25] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:39:25,851 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:39:28,467 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:28] "[32mPOST /edit_subscription/1 HTTP/1.1[0m" 302 -
+2025-03-10 17:39:28,495 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:28] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:39:28,549 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:28] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:39:28,550 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:39:30,030 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:30] "GET /edit_subscription/1?return_to=admin HTTP/1.1" 200 -
+2025-03-10 17:39:30,107 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:30] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:39:30,111 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:39:32,203 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:32] "[32mPOST /edit_subscription/1 HTTP/1.1[0m" 302 -
+2025-03-10 17:39:32,246 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:32] "GET /admin HTTP/1.1" 200 -
+2025-03-10 17:39:32,308 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:32] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-03-10 17:39:32,316 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 17:39:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-10 17:40:14,517 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-03-10 17:40:14,681 - apscheduler.scheduler - INFO - Scheduler has been shut down

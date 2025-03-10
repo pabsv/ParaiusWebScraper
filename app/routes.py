@@ -206,6 +206,10 @@ def edit_subscription(sub_id):
     subscription = Subscription.query.get_or_404(sub_id)
     email = subscription.user.email
 
+    # Get the return_to parameter (either from query string or form)
+    return_to = request.args.get('return_to') or request.form.get('return_to') or ''
+    from_admin = return_to == 'admin'
+
     # Create form and populate it with the subscription's current values
     form = SubscriptionForm()
     form.city_id.choices = [(c.id, c.name) for c in City.query.filter_by(active=True).all()]
@@ -222,11 +226,16 @@ def edit_subscription(sub_id):
 
             db.session.commit()
             flash('Subscription updated successfully!', 'success')
-            return redirect(url_for('main.subscriptions', email=email))
+
+            # Redirect based on return_to parameter
+            if from_admin:
+                return redirect(url_for('main.admin'))
+            else:
+                return redirect(url_for('main.subscriptions', email=email))
 
         except ValueError:
             flash('Invalid input values', 'danger')
-            return redirect(url_for('main.edit_subscription', sub_id=sub_id))
+            return redirect(url_for('main.edit_subscription', sub_id=sub_id, return_to=return_to))
 
     elif request.method == 'GET':
         # Populate form with existing subscription data
@@ -237,4 +246,44 @@ def edit_subscription(sub_id):
         form.min_bedrooms.data = subscription.min_bedrooms
         form.max_bedrooms.data = subscription.max_bedrooms
 
-    return render_template('edit_subscription.html', form=form, subscription=subscription)
+    return render_template('edit_subscription.html', form=form, subscription=subscription, from_admin=from_admin, return_to=return_to)
+
+@main_bp.route('/admin', methods=['GET'])
+def admin():
+    # Get filter parameters
+    email_filter = request.args.get('email', '')
+    city_filter = request.args.get('city_id', type=int)
+    active_filter = request.args.get('active')
+
+    # Start with all subscriptions
+    query = Subscription.query.join(User).join(City)
+
+    # Apply filters
+    if email_filter:
+        query = query.filter(User.email.contains(email_filter))
+    if city_filter:
+        query = query.filter(Subscription.city_id == city_filter)
+    if active_filter:
+        is_active = active_filter == 'active'
+        query = query.filter(Subscription.active == is_active)
+
+    # Get all cities for the filter dropdown
+    cities = City.query.filter_by(active=True).all()
+
+    # Order by creation date (newest first)
+    subscriptions = query.order_by(Subscription.created_at.desc()).all()
+
+    # Stats
+    total_users = User.query.count()
+    total_listings = Listing.query.count()
+    total_active_subscriptions = Subscription.query.filter_by(active=True).count()
+
+    return render_template('admin.html',
+                          subscriptions=subscriptions,
+                          cities=cities,
+                          city_filter=city_filter,
+                          email_filter=email_filter,
+                          active_filter=active_filter,
+                          total_users=total_users,
+                          total_listings=total_listings,
+                          total_active_subscriptions=total_active_subscriptions)

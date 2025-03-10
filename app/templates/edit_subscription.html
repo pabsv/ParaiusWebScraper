@@ -59,6 +59,9 @@
                 {{ form.min_bedrooms() }}
                 {{ form.max_bedrooms() }}
 
+                <!-- Add this hidden field to pass return_to with the form -->
+                <input type="hidden" name="return_to" value="{{ return_to }}">
+
                 <div class="mb-4">
                     {{ form.email.label(class="form-label") }}
                     {{ form.email(class="form-control", readonly=True) }}
@@ -102,7 +105,11 @@
                     <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
                 </div>
                 <div class="d-grid mt-3">
-                    <a href="{{ url_for('main.subscriptions', email=form.email.data) }}" class="btn btn-outline-secondary">Cancel</a>
+                    {% if from_admin %}
+                        <a href="{{ url_for('main.admin') }}" class="btn btn-outline-secondary">Cancel</a>
+                    {% else %}
+                        <a href="{{ url_for('main.subscriptions', email=form.email.data) }}" class="btn btn-outline-secondary">Cancel</a>
+                    {% endif %}
                 </div>
             </form>
         </div>

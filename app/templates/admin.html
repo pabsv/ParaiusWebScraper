@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">Admin Dashboard</h1>
+
+        <!-- Stats Cards -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card bg-primary text-white">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">{{ total_users }}</h3>
+                        <p class="card-text">Total Users</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-success text-white">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">{{ total_active_subscriptions }}</h3>
+                        <p class="card-text">Active Subscriptions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-info text-white">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">{{ total_listings }}</h3>
+                        <p class="card-text">Total Listings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scraper Test Section -->
+        <div class="card mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0">Scraper Testing</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Run All Scrapers</h5>
+                        <a href="{{ url_for('main.test_scraper') }}" class="btn btn-warning">
+                            <i class="bi bi-play-fill"></i> Run All Scrapers
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Run Individual City Scrapers</h5>
+                        <div class="row">
+                            {% for city in cities %}
+                            <div class="col-md-6 mb-2">
+                                <a href="{{ url_for('main.test_scraper_city', city_id=city.id) }}"
+                                   class="btn btn-outline-warning w-100">
+                                   <i class="bi bi-play-fill"></i> {{ city.name }}
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscriptions Section -->
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">All Subscriptions</h3>
+            </div>
+            <div class="card-body">
+                <!-- Filter Form -->
+                <form action="{{ url_for('main.admin') }}" method="GET" class="mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Filter by Email</label>
+                            <input type="text" class="form-control" name="email" value="{{ email_filter }}" placeholder="Email address">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Filter by City</label>
+                            <select name="city_id" class="form-select">
+                                <option value="">All Cities</option>
+                                {% for city in cities %}
+                                <option value="{{ city.id }}" {% if city_filter == city.id %}selected{% endif %}>{{ city.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Filter by Status</label>
+                            <select name="active" class="form-select">
+                                <option value="">All Statuses</option>
+                                <option value="active" {% if active_filter == 'active' %}selected{% endif %}>Active</option>
+                                <option value="inactive" {% if active_filter == 'inactive' %}selected{% endif %}>Inactive</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <div class="btn-group w-100">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-funnel"></i> Filter
+                                </button>
+                                <a href="{{ url_for('main.admin') }}" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Clear
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Subscriptions Table -->
+                {% if subscriptions %}
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Email</th>
+                                    <th>City</th>
+                                    <th>Price Range</th>
+                                    <th>Bedrooms</th>
+                                    <th>Created</th>
+                                    <th>Last Checked</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sub in subscriptions %}
+                                <tr>
+                                    <td>{{ sub.id }}</td>
+                                    <td>{{ sub.user.email }}</td>
+                                    <td>{{ sub.city.name }}</td>
+                                    <td>€{{ sub.min_price }} - €{{ sub.max_price }}</td>
+                                    <td>{{ sub.min_bedrooms }} - {{ sub.max_bedrooms }}</td>
+                                    <td>{{ sub.created_at.strftime('%Y-%m-%d') }}</td>
+                                    <td>
+                                        {% if sub.last_checked %}
+                                            {{ sub.last_checked.strftime('%Y-%m-%d %H:%M') }}
+                                        {% else %}
+                                            <span class="text-muted">Never</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if sub.active %}
+                                            <span class="badge bg-success">Active</span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">Inactive</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="{{ url_for('main.edit_subscription', sub_id=sub.id, return_to='admin') }}"
+                                               class="btn btn-outline-primary" title="Edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            {% if sub.active %}
+                                                <a href="{{ url_for('main.unsubscribe', sub_id=sub.id) }}"
+                                                   class="btn btn-outline-danger" title="Deactivate">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </a>
+                                            {% else %}
+                                                <a href="{{ url_for('main.reactivate', sub_id=sub.id) }}"
+                                                   class="btn btn-outline-success" title="Activate">
+                                                    <i class="bi bi-check-circle"></i>
+                                                </a>
+                                            {% endif %}
+                                            <a href="{{ url_for('main.test_email', sub_id=sub.id) }}?email={{ sub.user.email }}"
+                                               class="btn btn-outline-info" title="Test Email">
+                                                <i class="bi bi-envelope"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i> No subscriptions found matching your criteria.
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
