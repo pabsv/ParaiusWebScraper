@@ -4,6 +4,41 @@
 
 {% block styles %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.css">
+<style>
+    .bedroom-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        color: var(--muted-color);
+        font-weight: 500;
+    }
+
+    /* Enhanced styles for slider pips/markers */
+    .noUi-pips {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    /* Make the pip values more visible */
+    .noUi-value {
+        color: #333;
+        font-weight: 500;
+    }
+
+    /* Enhance the markers themselves */
+    .noUi-marker {
+        background: #333;
+    }
+
+    .noUi-marker-large {
+        height: 14px;
+    }
+
+    .noUi-marker-normal {
+        height: 8px;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -58,14 +93,15 @@
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label">Minimum Bedrooms</label>
-                    <div class="bedroom-selector">
-                        <button type="button" class="bedroom-btn" data-value="0">0+</button>
-                        <button type="button" class="bedroom-btn active" data-value="1">1+</button>
-                        <button type="button" class="bedroom-btn" data-value="2">2+</button>
-                        <button type="button" class="bedroom-btn" data-value="3">3+</button>
-                        <button type="button" class="bedroom-btn" data-value="4">4+</button>
-                        <button type="button" class="bedroom-btn" data-value="5">5+</button>
+                    <label class="form-label">Bedrooms</label>
+                    <div id="bedroom-slider" class="price-slider"></div>
+                    <div class="price-labels bedroom-labels">
+                        <span>Studio</span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
 
@@ -125,6 +161,11 @@
                 from: function (value) {
                     return Math.round(value);
                 }
+            },
+            pips: {
+                mode: 'values',
+                values: [0, 500, 1000, 1500, 2000, 2500, 3000],
+                density: 4
             }
         });
 
@@ -138,23 +179,46 @@
             maxPriceLabel.textContent = '€' + max;
         });
 
-        // Handle bedroom selection
-        const bedroomButtons = document.querySelectorAll('.bedroom-btn');
+        // Initialize bedroom slider
+        const bedroomSlider = document.getElementById('bedroom-slider');
         const minBedroomsInput = document.getElementById('min_bedrooms');
+        const maxBedroomsInput = document.getElementById('max_bedrooms');
 
-        bedroomButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                bedroomButtons.forEach(btn => btn.classList.remove('active'));
+        noUiSlider.create(bedroomSlider, {
+            start: [0, parseInt(maxBedroomsInput.value) || 5],
+            connect: true,
+            step: 1,
+            range: {
+                'min': 0,
+                'max': 5
+            },
+            format: {
+                to: function (value) {
+                    return Math.round(value);
+                },
+                from: function (value) {
+                    return Math.round(value);
+                }
+            },
+            pips: {
+                mode: 'count',
+                values: 6,
+                density: 20,
+                stepped: true,
+                format: {
+                    to: function(value) {
+                        return Math.round(value);
+                    }
+                }
+            }
+        });
 
-                // Add active class to clicked button
-                this.classList.add('active');
+        bedroomSlider.noUiSlider.on('update', function(values, handle) {
+            const min = values[0];
+            const max = values[1];
 
-                // Update hidden input
-                const value = this.getAttribute('data-value');
-                minBedroomsInput.value = value;
-                document.getElementById('max_bedrooms').value = 10; // Always set max to 10
-            });
+            minBedroomsInput.value = min;
+            maxBedroomsInput.value = max;
         });
     });
 </script>
